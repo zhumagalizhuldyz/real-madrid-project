@@ -1,36 +1,602 @@
 /* =========================================================
-   REAL MADRID FC — RESPONSIVE RULES
-   Loaded after style.css on squad.html and tickets.html
+   REAL MADRID FC — UNIFIED STYLESHEET
+   Used by: index.html, squad.html, tickets.html
    ========================================================= */
 
-@media (max-width: 900px) {
-  .news-grid { grid-template-columns: repeat(2, 1fr); }
-  .hero-content h1 { font-size: 2.6rem; }
-  .info-grid { grid-template-columns: 1fr; }
+/* ---------- 1. RESET & VARIABLES ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (max-width: 700px) {
-  .header-container,
-  .header {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .nav ul,
-  .main-nav ul {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-  .match-section .match-card {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-  }
-  .match-section .team { width: 100%; }
-  .news-grid { grid-template-columns: 1fr; }
-  .hero-content h1 { font-size: 2.1rem; }
-  .hero-content p { font-size: 1rem; }
-  .form-actions { justify-content: center; }
-  .footer-content,
-  .footer-container { flex-direction: column; text-align: center; }
+:root {
+  --rm-navy: #0e1e38;
+  --rm-blue: #00427c;
+  --rm-gold: #cfa968;
+  --rm-gold-hover: #b58f4f;
+  --rm-white: #ffffff;
+  --bg-light: #f4f6f9;
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e0e0e0;
+  --radius: 10px;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 10px 25px rgba(0, 0, 0, 0.18);
+  --transition: all 0.25s ease;
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* ---------- 2. SHARED HEADER (.header AND .site-header) ---------- */
+.header,
+.site-header {
+  background-color: var(--rm-navy);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  border-bottom: 3px solid var(--rm-gold);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Logo variants --- */
+/* page3: <div class="logo"><span class="logo-text">...</span></div> */
+.logo {
+  display: inline-flex;
+  align-items: center;
+}
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--rm-gold);
+  letter-spacing: 1px;
+}
+
+/* page1: <div class="logo-container"><img class="logo"><span class="brand-title"></div> */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.logo-container img.logo {
+  width: 45px;
+  height: auto;
+}
+.brand-title {
+  color: var(--rm-white);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* page2: <a class="logo-area"><img><span></a> */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--rm-white);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+.logo-area img {
+  width: 38px;
+  height: auto;
+}
+
+/* --- Nav (shared: .nav AND .main-nav) --- */
+.nav ul,
+.main-nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a,
+.main-nav a {
+  color: var(--rm-white);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 0.8rem;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.nav a:hover,
+.nav a.active,
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--rm-navy);
+  background-color: var(--rm-gold);
+}
+
+/* ---------- 3. LAYOUT WRAPPERS ---------- */
+.page-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.container,
+.page-main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- 4. HEADINGS ---------- */
+/* Decorative centered heading — homepage sections only */
+.match-section > h2,
+.achievements-section > h2,
+.news-section > h2,
+.cta-section > h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--rm-navy);
+  margin-bottom: 2rem;
+  position: relative;
+}
+.match-section > h2::after,
+.achievements-section > h2::after,
+.news-section > h2::after,
+.cta-section > h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--rm-gold);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+.achievements-section > h2,
+.cta-section > h2 { color: var(--rm-white); }
+
+/* Left-accent heading — tickets page sections */
+.matches-section h2,
+.booking-section h2,
+.faq-box h2,
+.contacts-box h2 {
+  font-size: 1.6rem;
+  color: var(--rm-navy);
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--rm-gold);
+  padding-left: 0.6rem;
+}
+
+/* Squad page title */
+.page-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--rm-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* ---------- 5. BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-gold {
+  background-color: var(--rm-gold);
+  color: var(--rm-navy);
+  text-transform: uppercase;
+  box-shadow: var(--shadow);
+}
+.btn-gold:hover {
+  background-color: var(--rm-gold-hover);
+  transform: translateY(-3px);
+}
+
+.btn-white {
+  background-color: var(--rm-white);
+  color: var(--rm-navy);
+  text-transform: uppercase;
+  border: 2px solid var(--rm-white);
+}
+.btn-white:hover {
+  background-color: transparent;
+  color: var(--rm-white);
+  transform: translateY(-3px);
+}
+
+.btn-buy {
+  background-color: var(--rm-navy);
+  color: var(--rm-white);
+}
+.btn-buy:hover { background-color: #001c58; }
+
+.btn-submit {
+  background-color: var(--rm-gold);
+  color: var(--rm-navy);
+}
+.btn-submit:hover { background-color: var(--rm-gold-hover); }
+
+.btn-reset {
+  background-color: #e0e0e0;
+  color: var(--text-dark);
+}
+.btn-reset:hover { background-color: #cccccc; }
+
+/* ---------- 6. HOMEPAGE: HERO ---------- */
+.hero {
+  background: linear-gradient(rgba(9, 26, 47, 0.65), rgba(9, 26, 47, 0.75)),
+    url('../hero.png') center/cover no-repeat;
+  height: 75vh;
+  min-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  color: var(--rm-white);
+}
+.hero-content { max-width: 800px; }
+.hero-content h1 {
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  color: #e5e7eb;
+}
+
+/* ---------- 7. HOMEPAGE: UPCOMING MATCH ---------- */
+.match-section {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+.match-section .match-card {
+  background-color: var(--card-bg);
+  border-left: 6px solid var(--rm-gold);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-strong);
+}
+.match-section .team {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--rm-navy);
+  width: 30%;
+  text-align: center;
+}
+.match-section .match-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.competition {
+  color: var(--rm-gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+.match-time {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--rm-navy);
+  margin: 0.3rem 0;
+}
+.stadium { color: var(--text-muted); font-size: 0.9rem; }
+
+/* ---------- 8. HOMEPAGE: ACHIEVEMENTS ---------- */
+.achievements-section {
+  background-color: var(--rm-navy);
+  padding: 4rem 1.5rem;
+}
+.achievements-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.achievement-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(207, 169, 104, 0.3);
+  border-radius: var(--radius);
+  padding: 2rem;
+  width: 260px;
+  text-align: center;
+  transition: var(--transition);
+}
+.achievement-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--rm-gold);
+  box-shadow: 0 10px 25px rgba(207, 169, 104, 0.2);
+}
+.trophy-icon { font-size: 2.4rem; margin-bottom: 0.5rem; }
+.achievement-card h3 {
+  font-size: 2.6rem;
+  color: var(--rm-gold);
+  margin-bottom: 0.2rem;
+}
+.achievement-card p { font-size: 1rem; font-weight: 600; color: var(--rm-white); }
+
+/* ---------- 9. HOMEPAGE: NEWS ---------- */
+.news-section {
+  max-width: 1100px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.news-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.news-card:hover { transform: translateY(-6px); }
+.news-image { height: 180px; background-size: cover; background-position: center; }
+.news-bg-1 { background-image: url('https://images.unsplash.com/photo-1577223625816-7546f13df25d?q=80&w=600&auto=format&fit=crop'); }
+.news-bg-2 { background-image: url('https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=600&auto=format&fit=crop'); }
+.news-bg-3 { background-image: url('https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=600&auto=format&fit=crop'); }
+.news-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.news-content h3 { color: var(--rm-navy); font-size: 1.2rem; margin-bottom: 0.8rem; }
+.news-content p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.2rem; flex-grow: 1; }
+.read-more { color: var(--rm-blue); font-weight: 700; text-decoration: none; transition: var(--transition); }
+.read-more:hover { color: var(--rm-gold); }
+
+/* ---------- 10. HOMEPAGE: CTA ---------- */
+.cta-section {
+  background-color: var(--rm-blue);
+  color: var(--rm-white);
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.cta-section p { max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem; }
+
+/* ---------- 11. SQUAD PAGE ---------- */
+.filter-radio { display: none; }
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 10px 22px;
+  border: 1px solid #cbd5e1;
+  background-color: #fff;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.filter-btn:hover { background-color: var(--rm-navy); color: #fff; border-color: var(--rm-navy); }
+
+#filter-all:checked ~ .filter-bar label[for="filter-all"],
+#filter-gk:checked ~ .filter-bar label[for="filter-gk"],
+#filter-df:checked ~ .filter-bar label[for="filter-df"],
+#filter-mf:checked ~ .filter-bar label[for="filter-mf"],
+#filter-fw:checked ~ .filter-bar label[for="filter-fw"],
+#filter-st:checked ~ .filter-bar label[for="filter-st"] {
+  background-color: var(--rm-navy);
+  color: #fff;
+  border-color: var(--rm-navy);
+}
+
+#filter-gk:checked ~ .squad-grid .player-card:not(.gk),
+#filter-df:checked ~ .squad-grid .player-card:not(.df),
+#filter-mf:checked ~ .squad-grid .player-card:not(.mf),
+#filter-fw:checked ~ .squad-grid .player-card:not(.fw),
+#filter-st:checked ~ .squad-grid .player-card:not(.st) {
+  display: none;
+}
+
+.squad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.player-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.player-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-strong); }
+.player-photo {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
+  background-color: #e2e8f0;
+}
+.player-info { padding: 1.2rem; display: flex; flex-direction: column; gap: 4px; }
+.player-number { font-size: 1.3rem; font-weight: 800; color: var(--rm-gold); }
+.player-name { font-size: 1.1rem; font-weight: 700; color: var(--rm-navy); }
+.player-position { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
+
+/* ---------- 12. TICKETS PAGE: HERO + MATCHES ---------- */
+.page-hero { text-align: center; margin-bottom: 3rem; }
+.page-hero h1 { font-size: 2.2rem; color: var(--rm-navy); margin-bottom: 0.5rem; }
+.page-hero p { color: var(--text-muted); }
+
+.matches-section { margin-bottom: 4rem; }
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.matches-grid .match-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+.matches-grid .match-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-strong); }
+.match-league {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--rm-gold);
+  background-color: var(--rm-navy);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  align-self: flex-start;
+}
+.match-teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+.match-teams .vs { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+.matches-grid .match-card .match-details {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.matches-grid .match-card .btn { margin-top: auto; }
+
+/* ---------- 13. TICKETS PAGE: BOOKING FORM ---------- */
+.booking-section {
+  background-color: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 4rem;
+}
+.form-grid-inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.form-group label { font-weight: 600; font-size: 0.95rem; }
+.form-group input,
+.form-group select {
+  padding: 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--font-main);
+}
+.form-group input:focus,
+.form-group select:focus { outline: 2px solid var(--rm-navy); }
+.form-actions { display: flex; gap: 1rem; justify-content: flex-end; }
+
+/* ---------- 14. TICKETS PAGE: FAQ + CONTACTS ---------- */
+.info-section { margin-bottom: 4rem; }
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.faq-box,
+.contacts-box {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.faq-item { margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
+.faq-item:last-child { border-bottom: none; }
+.faq-item h3 { font-size: 1.02rem; margin-bottom: 0.4rem; color: var(--text-dark); }
+.contact-info p,
+.stadium-hours p { margin-bottom: 0.6rem; color: var(--text-muted); }
+.stadium-hours h3 { margin-top: 1.2rem; margin-bottom: 0.5rem; font-size: 1.05rem; color: var(--rm-navy); }
+
+/* ---------- 15. FOOTERS (.footer AND .site-footer) ---------- */
+.footer {
+  background-color: var(--rm-navy);
+  color: var(--rm-white);
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer {
+  background-color: var(--rm-navy);
+  color: var(--rm-white);
+  padding: 2rem 1.5rem;
+  margin-top: auto;
+}
+.footer-content,
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.9rem;
+}
+.footer-links { display: flex; gap: 1rem; }
+.footer-links a { color: var(--rm-white); text-decoration: none; }
+.footer-links a:hover { color: var(--rm-gold); }

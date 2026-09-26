@@ -1,4 +1,4 @@
-
+<<<<<<<HEAD
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 
@@ -199,7 +199,7 @@ body {
   border-color: var(--rm-navy);
 }
 
-/* Сетка карточек игроков (CSS Grid Requirement - 6+ items) */
+
 .squad-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -271,14 +271,12 @@ body {
   flex-wrap: wrap;
   gap: 15px;
 }
-/* --- Чистый CSS фильтр (Без JS) --- */
 
-/* Скрываем сам переключатель радио */
 .filter-radio {
   display: none;
 }
 
-/* Изменяем вид активной кнопки при клике */
+
 #filter-all:checked ~ .filter-bar label[for="filter-all"],
 #filter-gk:checked ~ .filter-bar label[for="filter-gk"],
 #filter-df:checked ~ .filter-bar label[for="filter-df"],
@@ -290,7 +288,7 @@ body {
   border-color: var(--rm-navy);
 }
 
-/* Логика показа карточек по категориям */
+
 #filter-gk:checked ~ .squad-grid .player-card:not(.gk),
 #filter-df:checked ~ .squad-grid .player-card:not(.df),
 #filter-mf:checked ~ .squad-grid .player-card:not(.mf),
@@ -562,7 +560,7 @@ body {
 
 
 
-/* индекс 
+
 
 :root {
     --rm-dark-blue: #091a2f;

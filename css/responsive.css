@@ -1,7 +1,4 @@
-/* =========================================================
-   REAL MADRID FC — RESPONSIVE RULES
-   Loaded after style.css on squad.html and tickets.html
-   ========================================================= */
+
 
 @media (max-width: 900px) {
   .news-grid { grid-template-columns: repeat(2, 1fr); }

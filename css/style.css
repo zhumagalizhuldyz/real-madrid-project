@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-/* Подключение шрифта Montserrat из Google Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-/* Глобальные настройки и цвета */
+
 :root {
   --rm-navy: #0e1e38;
   --rm-gold: #febe10;

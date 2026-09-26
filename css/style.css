@@ -600,13 +600,3 @@ ul { list-style: none; }
 .footer-links { display: flex; gap: 1rem; }
 .footer-links a { color: var(--rm-white); text-decoration: none; }
 .footer-links a:hover { color: var(--rm-gold); }
-
-/* ---------- FAILSAFE: force logo to a fixed small size ---------- */
-.logo-container img.logo,
-.header-container img.logo,
-img.logo {
-  width: 45px !important;
-  height: 45px !important;
-  object-fit: contain;
-  flex-shrink: 0;
-}

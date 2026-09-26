@@ -260,7 +260,7 @@ ul { list-style: none; }
 .hero {
 background: linear-gradient(rgba(9, 26, 47, 0.65), rgba(9, 26, 47, 0.75)), 
 url('hero.png') center/cover no-repeat;
-height: 75vh;
+height: 100vh;
 display: flex;
 justify-content: center;
 align-items: center;

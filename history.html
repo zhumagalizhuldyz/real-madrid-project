@@ -6,7 +6,7 @@
     <title>Real Madrid CF - History & Legacy</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f6f9;
             color: #333;
             margin: 0;
@@ -20,6 +20,7 @@
         }
         header h2 {
             color: white;
+            margin: 10px 0 0 0;
         }
         .logo-badge {
             background-color: #e6b800;
@@ -34,7 +35,8 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin: 10px;
+            margin: 0 10px;
+            transition: color 0.2s;
         }
         nav a:hover {
             color: #e6b800;
@@ -43,26 +45,30 @@
             background-color: #0a192f;
             color: white;
             text-align: center;
-            padding: 40px;
+            padding: 40px 20px;
         }
         .hero h1 {
             color: #e6b800;
             font-size: 36px;
+            margin-bottom: 10px;
         }
         .container {
             width: 85%;
+            max-width: 1100px;
             margin: 30px auto;
         }
         section {
             background-color: white;
             padding: 30px;
             margin-bottom: 30px;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
         h2 {
             color: #0a192f;
             border-bottom: 2px solid #e6b800;
             padding-bottom: 8px;
+            margin-top: 0;
         }
         .timeline {
             border-left: 3px solid #e6b800;
@@ -76,26 +82,72 @@
             color: #0a192f;
             font-size: 18px;
         }
+        .trophy-grid, .legends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
         .card {
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            border: 1px solid #e1e8ed;
+            border-radius: 12px;
             padding: 20px;
-            margin: 15px 0;
             text-align: center;
-            background-color: #fafafa;
+            background-color: #ffffff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
         .card h3 {
             color: #0a192f;
+            margin: 10px 0;
+            font-size: 20px;
         }
         .trophy-count {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             color: #e6b800;
-            margin: 10px;
+            margin: 10px 0;
         }
         .role {
-            color: #666;
+            color: #0a192f;
+            font-weight: 600;
+            background-color: #f0f4f8;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 14px;
             margin-bottom: 10px;
+        }
+        .legend-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        .legend-img-wrapper {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 3px solid #e6b800;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .legend-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            object-position: top center; 
+            transition: transform 0.4s ease;
+        }
+        .card:hover .legend-img {
+            transform: scale(1.05); 
         }
     </style>
 </head>
@@ -114,9 +166,7 @@
     </header>
     <div class="hero">
         <h1>History & Legacy</h1>
-        <p>
-            Exploring the rich history of the greatest football club of the 20th Century.
-        </p>
+        <p>Exploring the rich history of the greatest football club of the 20th Century.</p>
     </div>
     <main class="container">
         <section id="overview">
@@ -125,128 +175,118 @@
                 Real Madrid Club de Fútbol, commonly known as Real Madrid, is a professional football club based in Madrid, Spain. Founded in 1902 as Madrid Football Club, the team has traditionally worn a white home kit since inception. The honorific title <em>Real</em> is Spanish for "Royal" and was bestowed to the club by King Alfonso XIII in 1920 together with the royal crown in the emblem.
             </p>
         </section>
+
         <section id="timeline-section">
             <h2>Historical Highlights</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <span class="timeline-year">1902</span>
                     <h3>Official Foundation</h3>
-                    <p>
-                        Madrid Football Club was officially founded on March 6, 1902, establishing its first board of directors.
-                    </p>
+                    <p>Madrid Football Club was officially founded on March 6, 1902, establishing its first board of directors.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">1950s</span>
                     <h3>European Dominance</h3>
-                    <p>
-                        Led by Alfredo Di Stéfano, Real Madrid won five consecutive European Cups between 1956 and 1960.
-                    </p>
+                    <p>Led by Alfredo Di Stéfano, Real Madrid won five consecutive European Cups between 1956 and 1960.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">1998</span>
                     <h3>The 7th European Cup (La Séptima)</h3>
-                    <p>
-                        Real Madrid ended a 32-year drought by winning their 7th Champions League title against Juventus.
-                    </p>
+                    <p>Real Madrid ended a 32-year drought by winning their 7th Champions League title against Juventus.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">2014</span>
                     <h3>La Décima</h3>
-                    <p>
-                        The club secured its historic 10th European title in Lisbon after an unforgettable dramatic final.
-                    </p>
+                    <p>The club secured its historic 10th European title in Lisbon after an unforgettable dramatic final.</p>
                 </div>
                 <div class="timeline-item">
                     <span class="timeline-year">2022</span>
                     <h3>14th Champions League Victory</h3>
-                    <p>
-                        Real Madrid continued its modern European dominance by claiming their 14th UCL trophy in Paris.
-                    </p>
+                    <p>Real Madrid continued its modern European dominance by claiming their 14th UCL trophy in Paris.</p>
                 </div>
             </div>
         </section>
         <section id="trophies">
             <h2>Trophy Cabinet</h2>
-            <div class="card">
-                <h3>UEFA Champions League</h3>
-                <div class="trophy-count">15</div>
-                <p>
-                    European Cup titles won across different eras.
-                </p>
-            </div>
-            <div class="card">
-                <h3>La Liga Titles</h3>
-                <div class="trophy-count">36</div>
-                <p>
-                    Spanish top-flight domestic league championships.
-                </p>
-            </div>
-            <div class="card">
-                <h3>Copa del Rey</h3>
-                <div class="trophy-count">20</div>
-                <p>
-                    National Spanish domestic cup victories.
-                </p>
-            </div>
-            <div class="card">
-                <h3>FIFA Club World Cup</h3>
-                <div class="trophy-count">5</div>
-                <p>
-                    Global club championship victories.
-                </p>
-            </div>
-            <div class="card">
-                <h3>UEFA Super Cup</h3>
-                <div class="trophy-count">6</div>
-                <p>
-                    Winners of the European super cup clash.
-                </p>
-            </div>
-            <div class="card">
-                <h3>Supercopa de España</h3>
-                <div class="trophy-count">13</div>
-                <p>
-                    Spanish Super Cup domestic honors.
-                </p>
+            <div class="trophy-grid">
+                <div class="card">
+                    <h3>UEFA Champions League</h3>
+                    <div class="trophy-count">15</div>
+                    <p>European Cup titles won across different eras.</p>
+                </div>
+                <div class="card">
+                    <h3>La Liga Titles</h3>
+                    <div class="trophy-count">36</div>
+                    <p>Spanish top-flight domestic league championships.</p>
+                </div>
+                <div class="card">
+                    <h3>Copa del Rey</h3>
+                    <div class="trophy-count">20</div>
+                    <p>National Spanish domestic cup victories.</p>
+                </div>
+                <div class="card">
+                    <h3>FIFA Club World Cup</h3>
+                    <div class="trophy-count">5</div>
+                    <p>Global club championship victories.</p>
+                </div>
+                <div class="card">
+                    <h3>UEFA Super Cup</h3>
+                    <div class="trophy-count">6</div>
+                    <p>Winners of the European super cup clash.</p>
+                </div>
+                <div class="card">
+                    <h3>Supercopa de España</h3>
+                    <div class="trophy-count">13</div>
+                    <p>Spanish Super Cup domestic honors.</p>
+                </div>
             </div>
         </section>
         <section id="legends">
             <h2>Club Legends</h2>
-            <div class="card">
-                <h3>Alfredo Di Stéfano</h3>
-                <div class="role">
-                    Forward (1953–1964)
+            <div class="legends-grid">
+                <div class="card">
+                    <div class="legend-header">
+                        <div class="legend-img-wrapper">
+                            <img src="Di_stefano_argentina.jpg" alt="Alfredo Di Stéfano" class="legend-img">
+                        </div>
+                        <h3>Alfredo Di Stéfano</h3>
+                    </div>
+                    <div class="role">Forward (1953–1964)</div>
+                    <p>The iconic player who transformed Real Madrid into a global powerhouse.</p>
                 </div>
-                <p>
-                    The iconic player who transformed Real Madrid into a global powerhouse.
-                </p>
-            </div>
-            <div class="card">
-                <h3>Cristiano Ronaldo</h3>
-                <div class="role">
-                    Forward (2009–2018)
+
+                <div class="card">
+                    <div class="legend-header">
+                        <div class="legend-img-wrapper">
+                            <img src="cefa3f5bbb582064204d3c0a7accc908.jpg" alt="Cristiano Ronaldo" class="legend-img">
+                        </div>
+                        <h3>Cristiano Ronaldo</h3>
+                    </div>
+                    <div class="role">Forward (2009–2018)</div>
+                    <p>All-time leading goalscorer with 450 goals in 438 official matches.</p>
                 </div>
-                <p>
-                    All-time leading goalscorer with 450 goals in 438 official matches.
-                </p>
-            </div>
-            <div class="card">
-                <h3>Raúl González</h3>
-                <div class="role">
-                    Forward (1994–2010)
+
+                <div class="card">
+                    <div class="legend-header">
+                        <div class="legend-img-wrapper">
+                            <img src="i.jpg" alt="Raúl González" class="legend-img">
+                        </div>
+                        <h3>Raúl González</h3>
+                    </div>
+                    <div class="role">Forward (1994–2010)</div>
+                    <p>Long-time captain and record holder for most appearances (741 matches).</p>
                 </div>
-                <p>
-                    Long-time captain and record holder for most appearances (741 matches).
-                </p>
-            </div>
-            <div class="card">
-                <h3>Zinedine Zidane</h3>
-                <div class="role">
-                    Midfielder / Manager
+
+                <div class="card">
+                    <div class="legend-header">
+                        <div class="legend-img-wrapper">
+                            <img src="f06125c94682aa63622f5323e6bf3aad.jpg" alt="Zinedine Zidane" class="legend-img">
+                        </div>
+                        <h3>Zinedine Zidane</h3>
+                    </div>
+                    <div class="role">Midfielder / Manager</div>
+                    <p>Scored the legendary 2002 volley and won 3 consecutive UCLs as manager.</p>
                 </div>
-                <p>
-                    Scored the legendary 2002 volley and won 3 consecutive UCLs as manager.
-                </p>
             </div>
         </section>
     </main>

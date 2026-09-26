@@ -3,11 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Madrid</title>
+    <title>Real Madrid FC | Home</title>
+    
+    <link rel="icon" type="png" href="logo.png">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Real Madrid</h1>
+    <header class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="Real Madrid Logo" class="logo">
+            <span class="brand-title">REAL MADRID FC</span>
+        </div>
+        <nav class="nav">
+   <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="#matches">Matches</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#tickets">Tickets</a></li>
+</ul>
+</nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>REAL MADRID </h1>
+                <p>Welcome to the Royal Club! Experience the legacy, passion, and glory of one of the most successful football clubs in history.</p>
+                <a href="tickets.html" class="btn btn-gold">Get Tickets</a>
+            </div>
+        </section>
+
+        <section id="matches" class="match-section">
+            <h2>Upcoming Match</h2>
+            <div class="match-card">
+                <div class="team team-home">
+                    <span class="team-name">Real Madrid</span>
+                </div>
+                <div class="match-details">
+                    <span class="competition">La Liga</span>
+                    <span class="match-time">Sunday, 21:00 CET</span>
+                    <span class="stadium">Santiago Bernabéu</span>
+                </div>
+                <div class="team team-away">
+                    <span class="team-name">FC Barcelona</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="achievements" class="achievements-section">
+            <h2>Key Achievements</h2>
+            <div class="achievements-container">
+                <div class="achievement-card">
+                    <div class="trophy-icon">🏆</div>
+                    <h3>15</h3>
+                    <p>UEFA Champions League</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="trophy-icon">🥇</div>
+                    <h3>36</h3>
+                    <p>La Liga Titles</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="trophy-icon">👑</div>
+                    <h3>5</h3>
+                    <p>FIFA Club World Cups</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="news-section">
+            <h2>Top News</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-image news-bg-1"></div>
+                    <div class="news-content">
+                        <h3>Bernabéu Renovation Complete</h3>
+                        <p>The state-of-the-art stadium upgrade is finished, bringing a new era of matchday experiences to fans worldwide.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image news-bg-2"></div>
+                    <div class="news-content">
+                        <h3>Champions League Quarter-Finals Prep</h3>
+                        <p>The squad prepares for an intense clash as Real Madrid aims for another historic European night.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-image news-bg-3"></div>
+                    <div class="news-content">
+                        <h3>Academy Stars Rising</h3>
+                        <p>Several promising talents from La Fábrica have been called up to train with the first team this week.</p>
+                        <a href="#" class="read-more">Read More &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+      
+<section id="tickets" class="cta-section">
+    <h2>Discover The Royal Legacy</h2>
+    <p>From iconic European nights to legendary players, explore what makes Real Madrid the greatest club in history.</p>
+    <a href="history.html" class="btn btn-white">Explore History</a>
+</section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Real Madrid </p>
+    </footer>
 
 </body>
 </html>

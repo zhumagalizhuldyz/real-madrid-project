@@ -259,7 +259,7 @@ ul { list-style: none; }
 /* ---------- 6. HOMEPAGE: HERO ---------- */
 .hero {
 background: linear-gradient(rgba(9, 26, 47, 0.65), rgba(9, 26, 47, 0.75)), 
-url('hero.png') center/cover no-repeat;
+url('../images/hero.png') center/cover no-repeat;
 height: 100vh;
 display: flex;
 justify-content: center;

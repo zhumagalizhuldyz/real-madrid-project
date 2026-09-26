@@ -3,11 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Madrid Players</title>
+    <title>Real Madrid CF — Tickets & Fan Zone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
 
-    <h1>Players</h1>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-text">REAL MADRID CF</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="squad.html">Squad</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="tickets.html" class="active">Tickets & Fan Zone</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-main">
+        <section class="page-hero">
+            <h1>Matches, Tickets & Fan Zone</h1>
+            <p>Book your tickets for Real Madrid matches at the Santiago Bernabéu Stadium</p>
+        </section>
+
+        <section class="matches-section">
+            <h2>Upcoming Matches</h2>
+            <div class="matches-grid">
+                <article class="match-card">
+                    <div class="match-league">La Liga</div>
+                    <div class="match-teams">
+                        <span class="team home">Real Madrid</span>
+                        <span class="vs">VS</span>
+                        <span class="team away">FC Barcelona</span>
+                    </div>
+                    <div class="match-details">
+                        <time datetime="2026-10-25">October 25, 2026, 21:00</time>
+                        <span class="stadium">Santiago Bernabéu</span>
+                    </div>
+                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+                </article>
+
+                <article class="match-card">
+                    <div class="match-league">UEFA Champions League</div>
+                    <div class="match-teams">
+                        <span class="team home">Real Madrid</span>
+                        <span class="vs">VS</span>
+                        <span class="team away">Bayern Munich</span>
+                    </div>
+                    <div class="match-details">
+                        <time datetime="2026-11-04">November 04, 2026, 22:00</time>
+                        <span class="stadium">Santiago Bernabéu</span>
+                    </div>
+                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+                </article>
+
+                <article class="match-card">
+                    <div class="match-league">La Liga</div>
+                    <div class="match-teams">
+                        <span class="team home">Real Madrid</span>
+                        <span class="vs">VS</span>
+                        <span class="team away">Atletico Madrid</span>
+                    </div>
+                    <div class="match-details">
+                        <time datetime="2026-11-18">November 18, 2026, 18:30</time>
+                        <span class="stadium">Santiago Bernabéu</span>
+                    </div>
+                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+                </article>
+
+                <article class="match-card">
+                    <div class="match-league">Copa del Rey</div>
+                    <div class="match-teams">
+                        <span class="team home">Real Madrid</span>
+                        <span class="vs">VS</span>
+                        <span class="team away">Sevilla FC</span>
+                    </div>
+                    <div class="match-details">
+                        <time datetime="2026-12-02">December 02, 2026, 20:00</time>
+                        <span class="stadium">Santiago Bernabéu</span>
+                    </div>
+                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+                </article>
+
+                <article class="match-card">
+                    <div class="match-league">La Liga</div>
+                    <div class="match-teams">
+                        <span class="team home">Real Madrid</span>
+                        <span class="vs">VS</span>
+                        <span class="team away">Valencia CF</span>
+                    </div>
+                    <div class="match-details">
+                        <time datetime="2026-12-15">December 15, 2026, 19:00</time>
+                        <span class="stadium">Santiago Bernabéu</span>
+                    </div>
+                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+                </article>
+
+                <article class="match-card">
+                    <div class="match-league">UEFA Champions League</div>
+                    <div class="match-teams">
+                        <span class="team home">Real Madrid</span>
+                        <span class="vs">VS</span>
+                        <span class="team away">Juventus</span>
+                    </div>
+                    <div class="match-details">
+                        <time datetime="2027-01-20">January 20, 2027, 22:00</time>
+                        <span class="stadium">Santiago Bernabéu</span>
+                    </div>
+                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="booking-section" id="booking-form">
+            <h2>Ticket Booking Form</h2>
+            <form class="ticket-form" action="#" method="post">
+                <div class="form-grid-inputs">
+                    <div class="form-group">
+                        <label for="user-name">Full Name:</label>
+                        <input type="text" id="user-name" name="fullname" placeholder="John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-email">Email Address:</label>
+                        <input type="email" id="user-email" name="email" placeholder="example@gmail.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="match-select">Select Match:</label>
+                        <select id="match-select" name="match" required>
+                            <option value="">-- Choose a Match --</option>
+                            <option value="barcelona">Real Madrid vs FC Barcelona</option>
+                            <option value="bayern">Real Madrid vs Bayern Munich</option>
+                            <option value="atletico">Real Madrid vs Atletico Madrid</option>
+                            <option value="sevilla">Real Madrid vs Sevilla FC</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sector-select">Stadium Sector:</label>
+                        <select id="sector-select" name="sector" required>
+                            <option value="tribuna-vip">VIP Box</option>
+                            <option value="tribuna-north">North Stand</option>
+                            <option value="tribuna-south">South Stand (Fan Zone)</option>
+                            <option value="tribuna-east">East Stand</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ticket-quantity">Number of Tickets:</label>
+                        <input type="number" id="ticket-quantity" name="quantity" min="1" max="6" value="1" required>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-submit">Confirm Booking</button>
+                    <button type="reset" class="btn btn-reset">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="info-section">
+            <div class="info-grid">
+                <div class="faq-box">
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+                    <div class="faq-item">
+                        <h3>How will I receive my tickets?</h3>
+                        <p>An electronic ticket with a QR code will be sent to your email immediately after booking confirmation.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How early should I arrive before the match?</h3>
+                        <p>Gates at the Santiago Bernabéu Stadium open 2 hours prior to kickoff.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Do I need an ID card for entry?</h3>
+                        <p>Yes, a valid personal identification document matching the name on the ticket must be presented at the gate.</p>
+                    </div>
+                </div>
+
+                <div class="contacts-box">
+                    <h2>Contacts & Stadium Info</h2>
+                    <address class="contact-info">
+                        <p><strong>Stadium:</strong> Estadio Santiago Bernabéu</p>
+                        <p><strong>Address:</strong> C. de Concha Espina, 1, 28036 Madrid, Spain</p>
+                        <p><strong>Ticket Office Phone:</strong> +34 91 398 4300</p>
+                        <p><strong>Support Email:</strong> tickets@realmadrid.com</p>
+                    </address>
+                    <div class="stadium-hours">
+                        <h3>Ticket Office Hours:</h3>
+                        <p>Mon — Sat: 10:00 – 19:00</p>
+                        <p>Sun (Matchdays): 10:00 – until kickoff</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Real Madrid CF Fan Project. Assignment #2.</p>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tickets.html">Tickets</a></li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 </html>

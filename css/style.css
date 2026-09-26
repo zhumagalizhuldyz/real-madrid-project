@@ -1,9 +1,3 @@
-/* =========================================================
-   REAL MADRID FC — UNIFIED STYLESHEET
-   Used by: index.html, squad.html, tickets.html
-   ========================================================= */
-
-/* ---------- 1. RESET & VARIABLES ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -39,7 +33,7 @@ a { color: inherit; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 
-/* ---------- 2. SHARED HEADER (.header AND .site-header) ---------- */
+
 .header,
 .site-header {
   background-color: var(--rm-navy);
@@ -65,8 +59,6 @@ ul { list-style: none; }
   align-items: center;
 }
 
-/* --- Logo variants --- */
-/* page3: <div class="logo"><span class="logo-text">...</span></div> */
 .logo {
   display: inline-flex;
   align-items: center;
@@ -78,7 +70,7 @@ ul { list-style: none; }
   letter-spacing: 1px;
 }
 
-/* page1: <div class="logo-container"><img class="logo"><span class="brand-title"></div> */
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -95,7 +87,7 @@ ul { list-style: none; }
   letter-spacing: 1px;
 }
 
-/* page2: <a class="logo-area"><img><span></a> */
+
 .logo-area {
   display: flex;
   align-items: center;
@@ -110,7 +102,7 @@ ul { list-style: none; }
   height: auto;
 }
 
-/* --- Nav (shared: .nav AND .main-nav) --- */
+
 .nav ul,
 .main-nav ul {
   display: flex;
@@ -135,7 +127,7 @@ ul { list-style: none; }
   background-color: var(--rm-gold);
 }
 
-/* ---------- 3. LAYOUT WRAPPERS ---------- */
+
 .page-wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -149,8 +141,6 @@ ul { list-style: none; }
   padding: 0 1.5rem;
 }
 
-/* ---------- 4. HEADINGS ---------- */
-/* Decorative centered heading — homepage sections only */
 .match-section > h2,
 .achievements-section > h2,
 .news-section > h2,
@@ -176,7 +166,7 @@ ul { list-style: none; }
 .achievements-section > h2,
 .cta-section > h2 { color: var(--rm-white); }
 
-/* Left-accent heading — tickets page sections */
+
 .matches-section h2,
 .booking-section h2,
 .faq-box h2,
@@ -188,7 +178,7 @@ ul { list-style: none; }
   padding-left: 0.6rem;
 }
 
-/* Squad page title */
+
 .page-title {
   font-size: 2.2rem;
   font-weight: 800;
@@ -202,7 +192,7 @@ ul { list-style: none; }
   margin-bottom: 2rem;
 }
 
-/* ---------- 5. BUTTONS ---------- */
+
 .btn {
   display: inline-block;
   padding: 0.8rem 1.8rem;
@@ -256,10 +246,10 @@ ul { list-style: none; }
 }
 .btn-reset:hover { background-color: #cccccc; }
 
-/* ---------- 6. HOMEPAGE: HERO ---------- */
+
 .hero {
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(rgba(9, 26, 47, 0.65), rgba(9, 26, 47, 0.75)),
+    url('../hero.png') center/cover no-repeat;
   height: 75vh;
   min-height: 420px;
   display: flex;
@@ -269,25 +259,7 @@ ul { list-style: none; }
   padding: 0 1.5rem;
   color: var(--rm-white);
 }
-/* the photo becomes a full-bleed background image */
-.hero img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 25%;
-  z-index: 0;
-}
-/* dark overlay so white text stays readable over the photo */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(9, 26, 47, 0.65), rgba(9, 26, 47, 0.8));
-  z-index: 1;
-}
-.hero-content { position: relative; z-index: 2; max-width: 800px; }
+.hero-content { max-width: 800px; }
 .hero-content h1 {
   font-size: 3.2rem;
   letter-spacing: 2px;
@@ -299,7 +271,7 @@ ul { list-style: none; }
   color: #e5e7eb;
 }
 
-/* ---------- 7. HOMEPAGE: UPCOMING MATCH ---------- */
+
 .match-section {
   max-width: 1100px;
   margin: 4rem auto;
@@ -343,7 +315,7 @@ ul { list-style: none; }
 }
 .stadium { color: var(--text-muted); font-size: 0.9rem; }
 
-/* ---------- 8. HOMEPAGE: ACHIEVEMENTS ---------- */
+
 .achievements-section {
   background-color: var(--rm-navy);
   padding: 4rem 1.5rem;
@@ -378,7 +350,7 @@ ul { list-style: none; }
 }
 .achievement-card p { font-size: 1rem; font-weight: 600; color: var(--rm-white); }
 
-/* ---------- 9. HOMEPAGE: NEWS ---------- */
+
 .news-section {
   max-width: 1100px;
   margin: 4rem auto;
@@ -414,7 +386,7 @@ ul { list-style: none; }
 .read-more { color: var(--rm-blue); font-weight: 700; text-decoration: none; transition: var(--transition); }
 .read-more:hover { color: var(--rm-gold); }
 
-/* ---------- 10. HOMEPAGE: CTA ---------- */
+
 .cta-section {
   background-color: var(--rm-blue);
   color: var(--rm-white);
@@ -423,7 +395,7 @@ ul { list-style: none; }
 }
 .cta-section p { max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem; }
 
-/* ---------- 11. SQUAD PAGE ---------- */
+
 .filter-radio { display: none; }
 
 .filter-bar {
@@ -490,7 +462,7 @@ ul { list-style: none; }
 .player-name { font-size: 1.1rem; font-weight: 700; color: var(--rm-navy); }
 .player-position { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; }
 
-/* ---------- 12. TICKETS PAGE: HERO + MATCHES ---------- */
+
 .page-hero { text-align: center; margin-bottom: 3rem; }
 .page-hero h1 { font-size: 2.2rem; color: var(--rm-navy); margin-bottom: 0.5rem; }
 .page-hero p { color: var(--text-muted); }
@@ -540,7 +512,7 @@ ul { list-style: none; }
 }
 .matches-grid .match-card .btn { margin-top: auto; }
 
-/* ---------- 13. TICKETS PAGE: BOOKING FORM ---------- */
+
 .booking-section {
   background-color: var(--card-bg);
   padding: 2.5rem;
@@ -568,7 +540,7 @@ ul { list-style: none; }
 .form-group select:focus { outline: 2px solid var(--rm-navy); }
 .form-actions { display: flex; gap: 1rem; justify-content: flex-end; }
 
-/* ---------- 14. TICKETS PAGE: FAQ + CONTACTS ---------- */
+
 .info-section { margin-bottom: 4rem; }
 .info-grid {
   display: grid;
@@ -589,7 +561,7 @@ ul { list-style: none; }
 .stadium-hours p { margin-bottom: 0.6rem; color: var(--text-muted); }
 .stadium-hours h3 { margin-top: 1.2rem; margin-bottom: 0.5rem; font-size: 1.05rem; color: var(--rm-navy); }
 
-/* ---------- 15. FOOTERS (.footer AND .site-footer) ---------- */
+
 .footer {
   background-color: var(--rm-navy);
   color: var(--rm-white);

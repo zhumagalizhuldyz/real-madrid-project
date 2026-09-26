@@ -78,17 +78,15 @@ ul { list-style: none; }
   letter-spacing: 1px;
 }
 
-/* page1: <div class="logo-container"><img><span class="brand-title"></div> */
+/* page1: <div class="logo-container"><img class="logo"><span class="brand-title"></div> */
 .logo-container {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.logo-container img {
+.logo-container img.logo {
   width: 45px;
-  height: 45px;
-  object-fit: contain;
-  flex-shrink: 0;
+  height: auto;
 }
 .brand-title {
   color: var(--rm-white);
@@ -261,8 +259,9 @@ ul { list-style: none; }
 /* ---------- 6. HOMEPAGE: HERO ---------- */
 .hero {
   background: linear-gradient(rgba(9, 26, 47, 0.65), rgba(9, 26, 47, 0.75)),
-    url('../images/hero.png') center/cover no-repeat;
-  height: 100vh;
+    url('../hero.png') center/cover no-repeat;
+  height: 75vh;
+  min-height: 420px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -275,13 +274,6 @@ ul { list-style: none; }
   font-size: 3.2rem;
   letter-spacing: 2px;
   margin-bottom: 1rem;
-}
-.hero-content img {
-  display: block;
-  margin: 0 auto 1.5rem;
-  max-width: 260px;
-  width: 100%;
-  height: auto;
 }
 .hero-content p {
   font-size: 1.15rem;
@@ -608,3 +600,13 @@ ul { list-style: none; }
 .footer-links { display: flex; gap: 1rem; }
 .footer-links a { color: var(--rm-white); text-decoration: none; }
 .footer-links a:hover { color: var(--rm-gold); }
+
+/* ---------- FAILSAFE: force logo to a fixed small size ---------- */
+.logo-container img.logo,
+.header-container img.logo,
+img.logo {
+  width: 45px !important;
+  height: 45px !important;
+  object-fit: contain;
+  flex-shrink: 0;
+}

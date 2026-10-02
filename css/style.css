@@ -580,3 +580,30 @@ ul { list-style: none; }
 .footer-links { display: flex; gap: 1rem; }
 .footer-links a { color: var(--rm-white); text-decoration: none; }
 .footer-links a:hover { color: var(--rm-gold); }
+
+#filter-all:focus-visible ~ .filter-bar label[for="filter-all"],
+#filter-gk:focus-visible ~ .filter-bar label[for="filter-gk"],
+#filter-df:focus-visible ~ .filter-bar label[for="filter-df"],
+#filter-mf:focus-visible ~ .filter-bar label[for="filter-mf"],
+#filter-fw:focus-visible ~ .filter-bar label[for="filter-fw"],
+#filter-st:focus-visible ~ .filter-bar label[for="filter-st"] {
+  outline: 3px solid var(--rm-gold);
+  outline-offset: 3px;
+}
+
+.squad-note {
+  margin-top: 2rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+}
+.squad-note summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--rm-navy);
+}
+.squad-note summary:focus-visible {
+  outline: 3px solid var(--rm-gold);
+  outline-offset: 3px;
+}

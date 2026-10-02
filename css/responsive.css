@@ -31,3 +31,9 @@
   .footer-content,
   .footer-container { flex-direction: column; text-align: center; }
 }
+
+@media (max-width: 600px) {
+  .filter-bar { gap: 8px; }
+  .filter-btn { padding: 8px 14px; font-size: 0.85rem; }
+  .player-photo { height: 200px; }
+}

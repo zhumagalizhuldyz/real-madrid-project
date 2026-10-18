@@ -1,5 +1,7 @@
+
 (function () {
   'use strict';
+
   const contactForm = document.getElementById('contactForm');
 
   if (contactForm) {
@@ -12,15 +14,18 @@
         document.getElementById('contact-success').classList.add('d-none');
         return;
       }
+
       contactForm.classList.add('was-validated');
       document.getElementById('contact-success').classList.remove('d-none');
     });
   }
+
   const registerForm = document.getElementById('registerForm');
   const passwordField = document.getElementById('reg-password');
   const confirmField = document.getElementById('reg-confirm-password');
   const confirmFeedback = document.getElementById('confirm-password-feedback');
   const registerSuccess = document.getElementById('register-success');
+
   function checkPasswordsMatch() {
     if (confirmField.value === '') {
       confirmField.setCustomValidity('');
@@ -55,6 +60,7 @@
       registerForm.classList.add('was-validated');
       registerSuccess.classList.remove('d-none');
     });
+
     registerForm.addEventListener('reset', function () {
       setTimeout(function () {
         registerForm.classList.remove('was-validated');
@@ -64,5 +70,4 @@
       }, 0);
     });
   }
-
 })();

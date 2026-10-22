@@ -1,0 +1,89 @@
+
+
+@media (max-width: 900px) {
+  .news-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-content h1 { font-size: 2.6rem; }
+  .info-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .header-container,
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .nav ul,
+.main-nav ul {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+}
+  .match-section .match-card {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  .match-section .team { width: 100%; }
+  .news-grid { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 2.1rem; }
+  .hero-content p { font-size: 1rem; }
+  .hero {
+  min-height: 80vh;
+  height: auto;
+  padding: 4rem 1rem;
+}
+
+.hero-content img {
+  max-width: 200px;
+}
+  .form-actions { justify-content: center; }
+  .footer-content,
+  .footer-container { flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 600px) {
+  .filter-bar { gap: 8px; }
+  .filter-btn { padding: 8px 14px; font-size: 0.85rem; }
+  .player-photo { height: 200px; }
+}
+@media (max-width: 400px) {
+  .brand-title {
+    font-size: 1.1rem;
+  }
+
+  .logo-container img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav a {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .hero-content img {
+    max-width: 160px;
+  }
+
+  .match-section,
+  .news-section {
+    padding: 0 1rem;
+  }
+
+  .match-section > h2,
+  .achievements-section > h2,
+  .news-section > h2,
+  .cta-section > h2 {
+    font-size: 1.7rem;
+  }
+}

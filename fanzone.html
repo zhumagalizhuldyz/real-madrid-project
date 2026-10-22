@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Madrid - Fan Zone</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/interactive.css">
+  <script src="js/interactive.js" defer></script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="logo-area">
+          <img src="images/crest.png" alt="Real Madrid Crest">
+          <span>Real Madrid FC</span>
+        </a>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="squad.html">Squad</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="tickets.html">Tickets</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="fanzone.html" class="active">Fan Zone</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1 class="page-title">Fan Zone</h1>
+      <p class="subtitle">Interactive features for Real Madrid fans (Assignment #5: DOM &amp; Events)</p>
+
+      <!-- TASK 0 -->
+      <section class="fz-section" id="task0" aria-labelledby="task0-title">
+        <h2 id="task0-title">Task 0. Welcome message</h2>
+        <div class="fz-row">
+          <div class="fz-field">
+            <label for="fan-name">Your name</label>
+            <input type="text" id="fan-name" placeholder="e.g. Zhuldyz">
+          </div>
+          <button type="button" id="welcome-btn" class="btn btn-gold">Welcome me</button>
+        </div>
+        <p id="welcome-message" class="fz-message" aria-live="polite"></p>
+      </section>
+
+      
+      <section class="fz-section" id="task1" aria-labelledby="task1-title">
+        <h2 id="task1-title">Task 1. Light / dark theme</h2>
+        <p>Switch the colours of the page to your preferred theme.</p>
+        <button type="button" id="theme-btn" class="btn btn-gold">Switch to dark theme</button>
+      </section>
+
+     
+      <section class="fz-section" id="task2" aria-labelledby="task2-title">
+        <h2 id="task2-title">Task 2. FAQ</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-a1">When was Real Madrid founded?</button></h3>
+            <p class="faq-answer" id="faq-a1" hidden>Real Madrid was founded on 6 March 1902.</p>
+          </div>
+          <div class="faq-item">
+            <h3><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-a2">Where does the team play home games?</button></h3>
+            <p class="faq-answer" id="faq-a2" hidden>At the Santiago Bernabéu Stadium in Madrid, which holds more than 80,000 spectators.</p>
+          </div>
+          <div class="faq-item">
+            <h3><button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-a3">How many Champions League titles has the club won?</button></h3>
+            <p class="faq-answer" id="faq-a3" hidden>Real Madrid has won the European Cup / Champions League 15 times, more than any other club.</p>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="fz-section" id="task3" aria-labelledby="task3-title">
+        <h2 id="task3-title">Task 3. Live player search</h2>
+        <label for="player-search">Search players by name</label>
+        <input type="search" id="player-search" placeholder="Type a name, e.g. Vini" autocomplete="off">
+        <p id="search-count" class="fz-message" aria-live="polite"></p>
+        <div class="fz-grid" id="player-grid">
+          <article class="player-card searchable"><img src="images/player-courtois.webp" alt="Thibaut Courtois" class="player-photo"><div class="player-info"><span class="player-number">#1</span><h3 class="player-name">Thibaut Courtois</h3><p class="player-position">Goalkeeper</p></div></article>
+          <article class="player-card searchable"><img src="images/player-militao.webp" alt="Éder Militão" class="player-photo"><div class="player-info"><span class="player-number">#3</span><h3 class="player-name">Éder Militão</h3><p class="player-position">Defender</p></div></article>
+          <article class="player-card searchable"><img src="images/player-Bellingham.webp" alt="Jude Bellingham" class="player-photo"><div class="player-info"><span class="player-number">#5</span><h3 class="player-name">Jude Bellingham</h3><p class="player-position">Midfielder</p></div></article>
+          <article class="player-card searchable"><img src="images/player-vini.webp" alt="Vinícius Júnior" class="player-photo"><div class="player-info"><span class="player-number">#7</span><h3 class="player-name">Vinícius Jr.</h3><p class="player-position">Forward</p></div></article>
+          <article class="player-card searchable"><img src="images/player-valverde.webp" alt="Federico Valverde" class="player-photo"><div class="player-info"><span class="player-number">#8</span><h3 class="player-name">Federico Valverde</h3><p class="player-position">Midfielder</p></div></article>
+          <article class="player-card searchable"><img src="images/player-mbappe.webp" alt="Kylian Mbappé" class="player-photo"><div class="player-info"><span class="player-number">#9</span><h3 class="player-name">Kylian Mbappé</h3><p class="player-position">Forward</p></div></article>
+          <article class="player-card searchable"><img src="images/player-Rudiger.webp" alt="Antonio Rüdiger" class="player-photo"><div class="player-info"><span class="player-number">#22</span><h3 class="player-name">Antonio Rüdiger</h3><p class="player-position">Defender</p></div></article>
+          <article class="player-card searchable"><img src="images/player-arda.webp" alt="Arda Güler" class="player-photo"><div class="player-info"><span class="player-number">#15</span><h3 class="player-name">Arda Güler</h3><p class="player-position">Midfielder</p></div></article>
+        </div>
+        <p id="no-results" class="fz-message" hidden>No results found</p>
+      </section>
+
+     
+      <section class="fz-section" id="task4" aria-labelledby="task4-title">
+        <h2 id="task4-title">Task 4. My favourite players</h2>
+        <form id="fav-form" novalidate>
+          <div class="fz-row">
+            <div class="fz-field">
+              <label for="fav-input">Add a favourite player</label>
+              <input type="text" id="fav-input" placeholder="e.g. Raúl">
+            </div>
+            <button type="submit" class="btn btn-gold">Add</button>
+          </div>
+        </form>
+        <p id="fav-error" class="fz-error" role="alert"></p>
+        <p>Total favourites: <strong id="fav-count">0</strong></p>
+        <ul id="fav-list" class="fav-list"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>&copy; 2026 Real Madrid Fan Project. Built for Educational Purposes.</p>
+        <p>JavaScript Assignment #5</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

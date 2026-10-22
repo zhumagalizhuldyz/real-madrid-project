@@ -1,0 +1,36 @@
+
+.fz-section{background:var(--card-bg);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);border-left:6px solid var(--rm-gold)}
+.fz-section h2{font-size:1.4rem;color:var(--rm-navy);margin-bottom:1rem}
+.fz-section label{display:block;font-weight:600;margin-bottom:.4rem}
+.fz-section input{width:100%;padding:.6rem .8rem;font:inherit;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-light);color:var(--text-dark)}
+.fz-row{display:flex;gap:1rem;align-items:flex-end;flex-wrap:wrap}
+.fz-field{flex:1 1 240px}
+.fz-message{margin-top:1rem;font-weight:600}
+.fz-error{color:#c0392b;font-weight:600;min-height:1.4rem;margin:.5rem 0}
+.fz-section button:focus-visible,.fz-section input:focus-visible{outline:3px solid var(--rm-gold);outline-offset:2px}
+
+
+body.dark{--bg-light:#0b1424;--card-bg:#16233b;--text-dark:#e8edf5;--text-muted:#a5b0c4;--border-color:#2e3f60;--shadow:0 8px 20px rgba(0,0,0,.5)}
+body.dark .page-title,body.dark .fz-section h2,body.dark .player-name{color:var(--rm-gold)}
+body.dark .player-card,body.dark .player-info{background:var(--card-bg);color:var(--text-dark)}
+body.dark .faq-question{background:#1f3254;color:var(--text-dark)}
+
+
+.faq-item{margin-bottom:.6rem}
+.faq-item h3{font-size:1rem}
+.faq-question{width:100%;text-align:left;padding:.9rem 1rem;font:inherit;font-weight:700;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-light);color:var(--rm-navy);cursor:pointer;position:relative;padding-right:2.5rem}
+.faq-question::after{content:"+";position:absolute;right:1rem;font-size:1.3rem;line-height:1}
+.faq-question[aria-expanded="true"]::after{content:"\2212"}
+.faq-question[aria-expanded="true"]{border-color:var(--rm-gold)}
+.faq-answer{padding:.8rem 1rem}
+
+
+.fz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem;margin-top:1rem}
+.fz-grid .player-photo{height:200px;width:100%;object-fit:cover}
+.player-card.is-hidden{display:none}
+
+
+.fav-list{list-style:none;margin-top:1rem;display:grid;gap:.5rem}
+.fav-list li{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.6rem .9rem;border:1px solid var(--border-color);border-radius:6px;background:var(--bg-light)}
+.remove-btn{padding:.35rem .8rem;border:0;border-radius:5px;background:#c0392b;color:#fff;font:inherit;cursor:pointer}
+.remove-btn:hover{background:#962d22}

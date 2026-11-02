@@ -1,95 +1,219 @@
 
-const nameInput = document.getElementById('fan-name');             
-const welcomeMessage = document.querySelector('#welcome-message'); 
-document.getElementById('welcome-btn').addEventListener('click', () => {
-  const name = nameInput.value.trim();
-  welcomeMessage.textContent = name === ''
-    ? 'Please enter your name first, then press the button.'
-    : 'Hala Madrid, ' + name + '! Welcome to the Fan Zone!';
-});
+$(document).ready(function () {
+    "use strict";
+
+    $("#welcome-btn").on("click", function () {
+        const name = $("#fan-name").val().trim();
+
+        if (name === "") {
+            $("#welcome-message")
+                .text("Please enter your name first!")
+                .removeClass("success-message")
+                .addClass("error-message")
+                .stop(true, true)
+                .fadeIn(300);
+
+            return;
+        }
+
+        $("#welcome-message")
+            .text("Hala Madrid, " + name + "! Welcome to the Fan Zone!")
+            .removeClass("error-message")
+            .addClass("success-message")
+            .stop(true, true)
+            .fadeIn(300);
+    });
+
+   
+    $("#fan-name").on("input", function () {
+        if ($(this).val().trim() === "") {
+            $("#welcome-message").text("");
+        }
+    });
+
+    $("#theme-btn").on("click", function () {
+        $("body").toggleClass("dark");
+
+        const isDark = $("body").hasClass("dark");
+
+        $(this).text(
+            isDark ? "Switch to light theme" : "Switch to dark theme"
+        );
+
+        $("#theme-status")
+            .text(isDark ? "Dark theme activated!" : "Light theme activated!")
+            .stop(true, true)
+            .fadeIn(300)
+            .delay(1500)
+            .fadeOut(500);
+    });
 
 
-const themeBtn = document.getElementById('theme-btn');
-themeBtn.addEventListener('click', () => {
-  const isDark = document.body.classList.toggle('dark');
-  themeBtn.textContent = isDark ? 'Switch to light theme' : 'Switch to dark theme';
-});
+    
+    $(".faq-answer").prop("hidden", false).hide();
+
+    $(".faq-question").on("click", function () {
+        const button = $(this);
+        const answerId = button.attr("aria-controls");
+        const answer = $("#" + answerId);
+
+        const isExpanded =
+            button.attr("aria-expanded") === "true";
+
+        answer.stop(true, true);
+
+        if (isExpanded) {
+            button.attr("aria-expanded", "false");
+
+            answer.slideUp(300, function () {
+                answer.prop("hidden", true);
+            });
+
+        } else {
+            answer.prop("hidden", false);
+            button.attr("aria-expanded", "true");
+
+            answer.slideDown(300);
+        }
+    });
 
 
-const faqButtons = document.querySelectorAll('.faq-question');
-faqButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const answer = document.getElementById(button.getAttribute('aria-controls'));
-    const willOpen = answer.hidden;           
-    answer.hidden = !willOpen;
-    button.setAttribute('aria-expanded', String(willOpen));
-  });
-});
+   
+    let selectedCategory = "all";
+
+    function filterPlayers() {
+        const searchText = $("#player-search")
+            .val()
+            .trim()
+            .toLowerCase();
+
+        let visibleCount = 0;
+
+        $(".searchable").each(function () {
+            const card = $(this);
+
+            const playerName = card
+                .find(".player-name")
+                .text()
+                .toLowerCase();
+
+            const playerPosition = card
+                .find(".player-position")
+                .text()
+                .trim()
+                .toLowerCase();
+
+            const matchesSearch =
+                playerName.includes(searchText);
+
+            const matchesCategory =
+                selectedCategory === "all" ||
+                playerPosition === selectedCategory;
+
+            if (matchesSearch && matchesCategory) {
+                card.removeClass("is-hidden").show();
+                visibleCount++;
+            } else {
+                card.addClass("is-hidden").hide();
+            }
+        });
+
+        $("#search-count").text(
+            "Showing " + visibleCount +
+            " of " + $(".searchable").length + " players"
+        );
+
+        if (visibleCount === 0) {
+            $("#no-results").text("No results found").show();
+        } else {
+            $("#no-results").hide();
+        }
+    }
+
+    
+    $("#player-search").on("input", function () {
+        filterPlayers();
+    });
+
+    
+    $(".category-filter").on("click", function () {
+        selectedCategory = $(this).attr("data-category");
+
+        $(".category-filter")
+            .removeClass("active-category");
+
+        $(this).addClass("active-category");
+
+        filterPlayers();
+    });
+
+    // Initial filtering
+    filterPlayers();
 
 
-const searchInput = document.getElementById('player-search');
-const cards = document.querySelectorAll('.searchable');
-const searchCount = document.getElementById('search-count');
-const noResults = document.getElementById('no-results');
+    
+    function updateFavCount() {
+        const total = $("#fav-list li").length;
 
+        $("#fav-count").text(total);
 
-function normalize(text) {
-  return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-}
+        if (total === 0) {
+            $("#fav-empty").show();
+        } else {
+            $("#fav-empty").hide();
+        }
+    }
 
-function filterPlayers() {
-  const query = normalize(searchInput.value.trim());
-  let visible = 0;
-  cards.forEach((card) => {
-    const title = normalize(card.querySelector('.player-name').textContent);
-    const match = title.includes(query);
-    card.classList.toggle('is-hidden', !match);
-    if (match) visible++;
-  });
-  searchCount.textContent = 'Showing ' + visible + ' of ' + cards.length + ' players';
-  noResults.hidden = visible !== 0;
-}
-searchInput.addEventListener('input', filterPlayers);
-filterPlayers();
+   
+    $("#fav-form").on("submit", function (event) {
+        event.preventDefault();
 
+        const playerName = $("#fav-input").val().trim();
 
-const favForm = document.getElementById('fav-form');
-const favInput = document.getElementById('fav-input');
-const favList = document.getElementById('fav-list');
-const favCount = document.getElementById('fav-count');
-const favError = document.getElementById('fav-error');
+        if (playerName === "") {
+            $("#fav-error")
+                .text("Please enter a player name!")
+                .show();
 
-function updateFavCount() {
-  favCount.textContent = favList.children.length;
-}
+            $("#fav-input").focus();
+            return;
+        }
 
-favForm.addEventListener('submit', (event) => {
-  event.preventDefault();                     
-  const text = favInput.value.trim();
-  if (text === '') {
-    favError.textContent = 'Please enter a player name.';
-    favInput.focus();
-    return;
-  }
-  favError.textContent = '';
+        $("#fav-error").text("").hide();
 
-  const li = document.createElement('li');
-  const span = document.createElement('span');
-  span.textContent = text;                    
-  const removeBtn = document.createElement('button');
-  removeBtn.type = 'button';
-  removeBtn.className = 'remove-btn';
-  removeBtn.textContent = 'Remove';
-  removeBtn.setAttribute('aria-label', 'Remove ' + text);
-  removeBtn.addEventListener('click', () => {
-    li.remove();                              
+        const newItem = $("<li></li>");
+
+        const playerText = $("<span></span>")
+            .text(playerName);
+
+        const removeButton = $("<button></button>")
+            .attr("type", "button")
+            .addClass("remove-btn")
+            .text("Remove");
+
+        removeButton.attr(
+            "aria-label",
+            "Remove " + playerName
+        );
+
+        newItem.append(playerText);
+        newItem.append(removeButton);
+
+        $("#fav-list").append(newItem);
+
+        $("#fav-input").val("").focus();
+
+        updateFavCount();
+    });
+
+  
+    $("#fav-list").on("click", ".remove-btn", function () {
+        $(this).closest("li").remove();
+
+        updateFavCount();
+    });
+
+    // Initial favourite count
     updateFavCount();
-  });
-  li.append(span, removeBtn);
-  favList.append(li);
 
-  favInput.value = '';
-  favInput.focus();
-  updateFavCount();
 });
-updateFavCount();

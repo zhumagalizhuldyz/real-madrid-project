@@ -1,329 +1,382 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real Madrid - First Team Squad</title>
-  <link rel="stylesheet" href="css/style.css">  
-  <link rel="stylesheet" href="css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Real Madrid - Official Fan Website</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .home-hero {
+            min-height: 430px;
+            background:
+                linear-gradient(rgba(5, 15, 35, 0.65), rgba(5, 15, 35, 0.75)),
+                url("images/hero.png") center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .home-hero h1 {
+            font-size: clamp(32px, 5vw, 58px);
+            margin: 0 0 15px;
+            color: white;
+        }
+
+        .home-hero p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            background: #d4af37;
+            color: #101c35;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 6px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .home-btn:hover {
+            background: #f0d36b;
+            transform: translateY(-3px);
+        }
+
+        .home-section {
+            padding: 45px 0;
+        }
+
+        .home-section h2 {
+            text-align: center;
+            color: #14213d;
+            margin-bottom: 12px;
+        }
+
+        .home-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 30px;
+        }
+
+        .home-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+            margin-top: 30px;
+        }
+
+        .home-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            text-align: center;
+            padding-bottom: 22px;
+            transition: transform 0.3s;
+        }
+
+        .home-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .home-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: contain;
+            background: #f2f4f8;
+            padding: 15px;
+        }
+
+        .home-card h3 {
+            color: #14213d;
+            margin: 18px 10px 8px;
+        }
+
+        .home-card p {
+            padding: 0 18px;
+            margin-bottom: 18px;
+        }
+
+        .home-card a {
+            color: #14213d;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .home-card a:hover {
+            color: #b18a18;
+        }
+
+        .home-highlights {
+            background: #14213d;
+            color: white;
+            padding: 35px 20px;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .highlight-number {
+            color: #e6c45a;
+            font-size: 36px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .home-quote {
+            text-align: center;
+            padding: 35px 20px;
+            font-size: 20px;
+            font-style: italic;
+            color: #14213d;
+        }
+
+        @media (max-width: 600px) {
+            .home-hero {
+                min-height: 350px;
+            }
+
+            .home-hero p {
+                font-size: 16px;
+            }
+
+            .home-section {
+                padding: 30px 0;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="page-wrapper">
+
+<div class="page-wrapper">
+
+    <!-- HEADER -->
     <header class="site-header">
-      <div class="header-container">
-        <a href="index.html" class="logo-area">
-          <img src="images/crest.png" alt="Real Madrid Crest">
-          <span>Real Madrid FC</span>
-        </a>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="squad.html" class="active">Squad</a></li>
-            <li><a href="history.html">History</a></li>
-            <li><a href="tickets.html">Tickets</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="fanzone.html">Fan Zone</a></li>
-            <li><a href="register.html">Register</a></li>
-          </ul>
-        </nav>
-      </div>
+        <div class="header-container">
+
+            <a href="index.html" class="logo-area">
+                <img src="images/crest.png" alt="Real Madrid Crest">
+                <span>Real Madrid FC</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+                    <li><a href="squad.html">Squad</a></li>
+                    <li><a href="history.html">History</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="fanzone.html">Fan Zone</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+
+        </div>
     </header>
 
-    <main class="container">
-      <section>
-        <h1 class="page-title">First Team Squad</h1>
-        <p class="subtitle">Meet the current players and coaching staff representing Real Madrid CF</p>
 
-        <input type="radio" name="position-filter" id="filter-all" class="filter-radio" checked>
-        <input type="radio" name="position-filter" id="filter-gk" class="filter-radio">
-        <input type="radio" name="position-filter" id="filter-df" class="filter-radio">
-        <input type="radio" name="position-filter" id="filter-mf" class="filter-radio">
-        <input type="radio" name="position-filter" id="filter-fw" class="filter-radio">
-        <input type="radio" name="position-filter" id="filter-st" class="filter-radio">
+    <!-- HERO SECTION -->
+    <main>
 
-        <div class="filter-bar">
-          <label for="filter-all" class="filter-btn">All Squad</label>
-          <label for="filter-gk" class="filter-btn">Goalkeepers</label>
-          <label for="filter-df" class="filter-btn">Defenders</label>
-          <label for="filter-mf" class="filter-btn">Midfielders</label>
-          <label for="filter-fw" class="filter-btn">Forwards</label>
-          <label for="filter-st" class="filter-btn">Staff</label>
-        </div>
+        <section class="home-hero">
+            <h1>Welcome to Real Madrid</h1>
 
-        <div class="squad-grid">
+            <p>
+                Discover the history, legendary players, achievements
+                and latest information about one of football's most
+                successful clubs.
+            </p>
 
-          <article class="player-card gk">
-            <img src="images/player-courtois.webp" alt="Thibaut Courtois" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#1</span>
-              <h3 class="player-name">Thibaut Courtois</h3>
-              <p class="player-position">Goalkeeper</p>
-            </div>
-          </article>
+            <a href="squad.html" class="home-btn">
+                Explore Our Squad
+            </a>
+        </section>
 
-          <article class="player-card gk">
-            <img src="images/player-lunin.webp" alt="Andriy Lunin" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#13</span>
-              <h3 class="player-name">Andriy Lunin</h3>
-              <p class="player-position">Goalkeeper</p>
-            </div>
-          </article>
 
-          <article class="player-card df">
-            <img src="images/player-militao.webp" alt="Éder Militão" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#3</span>
-              <h3 class="player-name">Éder Militão</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+        <div class="container">
 
-          <article class="player-card df">
-            <img src="images/player-Rudiger.webp" alt="Antonio Rüdiger" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#22</span>
-              <h3 class="player-name">Antonio Rüdiger</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+            <!-- ABOUT SECTION -->
+            <section class="home-section">
+                <h2>Welcome, Madridistas!</h2>
 
-          <article class="player-card df">
-            <img src="images/player-Mendy.webp" alt="Ferland Mendy" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#23</span>
-              <h3 class="player-name">Ferland Mendy</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+                <p class="home-intro">
+                    Real Madrid Club de Fútbol is a professional football
+                    club based in Madrid, Spain. Founded in 1902, the club
+                    has built a remarkable legacy through its commitment
+                    to excellence, teamwork and success.
+                </p>
 
-          <article class="player-card df">
-            <img src="images/player-asencio.webp" alt="Raúl Asencio" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#35</span>
-              <h3 class="player-name">Raúl Asencio</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+                <div class="home-quote">
+                    "Hala Madrid y nada más!"
+                </div>
+            </section>
 
-          <article class="player-card df">
-            <img src="images/player-carreras.webp" alt="Álvaro Carreras" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#18</span>
-              <h3 class="player-name">Álvaro Carreras</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
 
-          <article class="player-card df">
-            <img src="images/player-cucurella.webp" alt="Marc Cucurella" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#25</span>
-              <h3 class="player-name">Marc Cucurella</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+            <!-- ACHIEVEMENTS -->
+            <section class="home-section">
+                <h2>Our Achievements</h2>
 
-          <article class="player-card df">
-            <img src="images/player-diomande.webp" alt="Ousmane Diomande" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#26</span>
-              <h3 class="player-name">Ousmane Diomande</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+                <p class="home-intro">
+                    A tradition of success on the national and
+                    international football stage.
+                </p>
 
-          <article class="player-card df">
-            <img src="images/player-dumfries.webp" alt="Denzel Dumfries" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#2</span>
-              <h3 class="player-name">Denzel Dumfries</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+                <div class="home-highlights">
 
-          <article class="player-card df">
-            <img src="images/player-huijsen.webp" alt="Dean Huijsen" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#24</span>
-              <h3 class="player-name">Dean Huijsen</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+                    <div>
+                        <span class="highlight-number">15</span>
+                        <span>Champions League Titles</span>
+                    </div>
 
-          <article class="player-card df">
-            <img src="images/player-konate.webp" alt="Ibrahima Konaté" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#12</span>
-              <h3 class="player-name">Ibrahima Konaté</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+                    <div>
+                        <span class="highlight-number">36</span>
+                        <span>La Liga Titles</span>
+                    </div>
 
-          <article class="player-card df">
-            <img src="images/player-trent.webp" alt="Trent Alexander-Arnold" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#66</span>
-              <h3 class="player-name">Trent Alexander-Arnold</h3>
-              <p class="player-position">Defender</p>
-            </div>
-          </article>
+                    <div>
+                        <span class="highlight-number">20</span>
+                        <span>Copa del Rey Titles</span>
+                    </div>
 
-          <article class="player-card mf">
-            <img src="images/player-Bellingham.webp" alt="Jude Bellingham" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#5</span>
-              <h3 class="player-name">Jude Bellingham</h3>
-              <p class="player-position">Midfielder</p>
-            </div>
-          </article>
+                    <div>
+                        <span class="highlight-number">1902</span>
+                        <span>Year Founded</span>
+                    </div>
 
-          <article class="player-card mf">
-            <img src="images/player-valverde.webp" alt="Federico Valverde" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#8</span>
-              <h3 class="player-name">Federico Valverde</h3>
-              <p class="player-position">Midfielder</p>
-            </div>
-          </article>
+                </div>
+            </section>
 
-          <article class="player-card mf">
-            <img src="images/Camavinga.webp" alt="Eduardo Camavinga" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#6</span>
-              <h3 class="player-name">Eduardo Camavinga</h3>
-              <p class="player-position">Midfielder</p>
-            </div>
-          </article>
 
-          <article class="player-card mf">
-            <img src="images/player-tchouameni.webp" alt="Aurélien Tchouaméni" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#14</span>
-              <h3 class="player-name">Aurélien Tchouaméni</h3>
-              <p class="player-position">Midfielder</p>
-            </div>
-          </article>
+            <!-- EXPLORE WEBSITE -->
+            <section class="home-section">
+                <h2>Explore Our Website</h2>
 
-          <article class="player-card mf">
-            <img src="images/player-arda.webp" alt="Arda Güler" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#15</span>
-              <h3 class="player-name">Arda Güler</h3>
-              <p class="player-position">Midfielder</p>
-            </div>
-          </article>
+                <p class="home-intro">
+                    Discover different sections of our Real Madrid
+                    fan website.
+                </p>
 
-          <article class="player-card mf">
-            <img src="images/player-brahim.webp" alt="Brahim Díaz" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#21</span>
-              <h3 class="player-name">Brahim Díaz</h3>
-              <p class="player-position">Midfielder</p>
-            </div>
-          </article>
+                <div class="home-cards">
 
-          <article class="player-card mf">
-            <img src="images/player-bernardo.webp" alt="Bernardo Silva" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#20</span>
-              <h3 class="player-name">Bernardo Silva</h3>
-              <p class="player-position">Midfielder</p>
-            </div>
-          </article>
+                    <article class="home-card">
+                        <img
+                            src="images/player-Bellingham.webp"
+                            alt="Real Madrid player Jude Bellingham"
+                        >
 
-          <article class="player-card mf">
-            <img src="images/player-thiago.webp" alt="Thiago Pitarch" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#28</span>
-              <h3 class="player-name">Thiago Pitarch</h3>
-              <p class="player-position">Midfielder</p>
-            </div>
-          </article>
+                        <h3>First Team Squad</h3>
 
-          <article class="player-card fw">
-            <img src="images/player-vini.webp" alt="Vinícius Júnior" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#7</span>
-              <h3 class="player-name">Vinícius Jr.</h3>
-              <p class="player-position">Forward</p>
-            </div>
-          </article>
+                        <p>
+                            Meet the players representing Real Madrid
+                            and discover their positions.
+                        </p>
 
-          <article class="player-card fw">
-            <img src="images/player-mbappe.webp" alt="Kylian Mbappé" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#9</span>
-              <h3 class="player-name">Kylian Mbappé</h3>
-              <p class="player-position">Forward</p>
-            </div>
-          </article>
+                        <a href="squad.html">View Squad &rarr;</a>
+                    </article>
 
-          <article class="player-card fw">
-            <img src="images/player-rodrygo.webp" alt="Rodrygo Goes" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#11</span>
-              <h3 class="player-name">Rodrygo</h3>
-              <p class="player-position">Forward</p>
-            </div>
-          </article>
 
-          <article class="player-card fw">
-            <img src="images/player-endrick.webp" alt="Endrick Felipe" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#16</span>
-              <h3 class="player-name">Endrick</h3>
-              <p class="player-position">Forward</p>
-            </div>
-          </article>
+                    <article class="home-card">
+                        <img
+                            src="images/Di_stefano_argentina.jpg"
+                            alt="Real Madrid legend Alfredo Di Stéfano"
+                        >
 
-          <article class="player-card fw">
-            <img src="images/player-espi.webp" alt="Fran Espi" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">#29</span>
-              <h3 class="player-name">Fran Espi</h3>
-              <p class="player-position">Forward</p>
-            </div>
-          </article>
+                        <h3>Club History</h3>
 
-          
-          <article class="player-card st">
-            <img src="images/mourinho.webp" alt="José Mourinho" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">HEAD</span>
-              <h3 class="player-name">José Mourinho</h3>
-              <p class="player-position">Head Coach</p>
-            </div>
-          </article>
+                        <p>
+                            Explore the important moments, trophies
+                            and legends of our club.
+                        </p>
 
-          <article class="player-card st">
-            <img src="images/player-valverde.webp" alt="Federico Valverde" class="player-photo">
-            <div class="player-info">
-              <span class="player-number">CAP</span>
-              <h3 class="player-name">Federico Valverde</h3>
-              <p class="player-position">Team Captain</p>
-            </div>
-          </article>
+                        <a href="history.html">Discover History &rarr;</a>
+                    </article>
+
+
+                    <article class="home-card">
+                        <img
+                            src="images/player-vini.webp"
+                            alt="Real Madrid player Vinícius Júnior"
+                        >
+
+                        <h3>Fan Zone</h3>
+
+                        <p>
+                            Enjoy interactive features, FAQs,
+                            player search and fan activities.
+                        </p>
+
+                        <a href="fanzone.html">Enter Fan Zone &rarr;</a>
+                    </article>
+
+
+                    <article class="home-card">
+                        <img
+                            src="images/crest.png"
+                            alt="Real Madrid club crest"
+                        >
+
+                        <h3>Tickets</h3>
+
+                        <p>
+                            Visit the tickets page to explore
+                            match information and ticket details.
+                        </p>
+
+                        <a href="tickets.html">View Tickets &rarr;</a>
+                    </article>
+
+                </div>
+            </section>
+
+
+            <!-- JOIN THE COMMUNITY -->
+            <section class="home-section">
+                <h2>Join the Madridista Community</h2>
+
+                <p class="home-intro">
+                    Become part of our fan community. Register on our
+                    website and stay connected with the world of Real Madrid.
+                </p>
+
+                <div style="text-align:center; margin:25px 0;">
+                    <a href="register.html" class="home-btn">
+                        Register Now
+                    </a>
+                </div>
+            </section>
 
         </div>
 
-        
-        <details class="squad-note">
-          <summary>How often is this squad list updated?</summary>
-          <p>The squad list reflects the registered first-team players and
-             coaching staff for the 2026/27 season and is updated after each
-             official transfer window.</p>
-        </details>
-
-      </section>
     </main>
 
+
+    <!-- FOOTER -->
     <footer class="site-footer">
-      <div class="container footer-content">
-        <p>&copy; 2026 Real Madrid Fan Project. Built for Educational Purposes.</p>
-        <p>Advanced CSS Assignment #2</p>
-      </div>
+        <div class="container footer-content">
+            <p>
+                &copy; 2026 Real Madrid Fan Project.
+                Built for Educational Purposes.
+            </p>
+
+            <p>Assignment #6 - Completed Website</p>
+        </div>
     </footer>
-  </div>
+
+</div>
+
 </body>
 </html>

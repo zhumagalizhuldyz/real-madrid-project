@@ -1,24 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Real Madrid - First Team Squad</title>
-  <link rel="stylesheet" href="css/style.css">  
+
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
 </head>
+
 <body>
   <div class="page-wrapper">
+
+    <!-- HEADER -->
     <header class="site-header">
       <div class="header-container">
+
         <a href="index.html" class="logo-area">
           <img src="images/crest.png" alt="Real Madrid Crest">
           <span>Real Madrid FC</span>
         </a>
-        <nav class="main-nav">
+
+        <nav class="main-nav" aria-label="Main navigation">
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="squad.html" class="active">Squad</a></li>
+            <li><a href="squad.html" class="active" aria-current="page">Squad</a></li>
             <li><a href="history.html">History</a></li>
             <li><a href="tickets.html">Tickets</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -26,39 +33,63 @@
             <li><a href="register.html">Register</a></li>
           </ul>
         </nav>
+
       </div>
     </header>
 
-    
+
+    <!-- MAIN CONTENT -->
     <main class="container">
+
       <section>
         <h1 class="page-title">First Team Squad</h1>
-        <p class="subtitle">Meet the current players and coaching staff representing Real Madrid CF</p>
 
-        
-        <input type="radio" name="position-filter" id="filter-all" class="filter-radio" checked>
-        <input type="radio" name="position-filter" id="filter-gk" class="filter-radio">
-        <input type="radio" name="position-filter" id="filter-df" class="filter-radio">
-        <input type="radio" name="position-filter" id="filter-mf" class="filter-radio">
-        <input type="radio" name="position-filter" id="filter-fw" class="filter-radio">
-        <input type="radio" name="position-filter" id="filter-st" class="filter-radio">
+        <p class="subtitle">
+          Meet the current players and coaching staff representing Real Madrid CF.
+        </p>
 
-        
-        <div class="filter-bar">
+        <!-- POSITION FILTERS -->
+        <input type="radio" name="position-filter" id="filter-all"
+               class="filter-radio" checked>
+
+        <input type="radio" name="position-filter" id="filter-gk"
+               class="filter-radio">
+
+        <input type="radio" name="position-filter" id="filter-df"
+               class="filter-radio">
+
+        <input type="radio" name="position-filter" id="filter-mf"
+               class="filter-radio">
+
+        <input type="radio" name="position-filter" id="filter-fw"
+               class="filter-radio">
+
+        <input type="radio" name="position-filter" id="filter-st"
+               class="filter-radio">
+
+
+        <div class="filter-bar" aria-label="Filter players by position">
+
           <label for="filter-all" class="filter-btn">All Squad</label>
           <label for="filter-gk" class="filter-btn">Goalkeepers</label>
           <label for="filter-df" class="filter-btn">Defenders</label>
           <label for="filter-mf" class="filter-btn">Midfielders</label>
           <label for="filter-fw" class="filter-btn">Forwards</label>
           <label for="filter-st" class="filter-btn">Staff</label>
+
         </div>
 
-        
+
+        <!-- PLAYER CARDS -->
         <div class="squad-grid">
-          
-          
+
+
+          <!-- GOALKEEPERS -->
+
           <article class="player-card gk">
-            <img src="images/player-courtois.webp" alt="Thibaut Courtois" class="player-photo">
+            <img src="images/player-courtois.webp"
+                 alt="Thibaut Courtois" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#1</span>
               <h3 class="player-name">Thibaut Courtois</h3>
@@ -66,8 +97,11 @@
             </div>
           </article>
 
+
           <article class="player-card gk">
-            <img src="images/player-lunin.webp" alt="Andriy Lunin" class="player-photo">
+            <img src="images/player-lunin.webp"
+                 alt="Andriy Lunin" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#13</span>
               <h3 class="player-name">Andriy Lunin</h3>
@@ -75,9 +109,13 @@
             </div>
           </article>
 
-         
+
+          <!-- DEFENDERS -->
+
           <article class="player-card df">
-            <img src="images/player-militao.webp" alt="Éder Militão" class="player-photo">
+            <img src="images/player-militao.webp"
+                 alt="Éder Militão" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#3</span>
               <h3 class="player-name">Éder Militão</h3>
@@ -85,8 +123,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-Rudiger.webp" alt="Antonio Rüdiger" class="player-photo">
+            <img src="images/player-Rudiger.webp"
+                 alt="Antonio Rüdiger" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#22</span>
               <h3 class="player-name">Antonio Rüdiger</h3>
@@ -94,8 +135,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-Mendy.webp" alt="Ferland Mendy" class="player-photo">
+            <img src="images/player-Mendy.webp"
+                 alt="Ferland Mendy" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#23</span>
               <h3 class="player-name">Ferland Mendy</h3>
@@ -103,8 +147,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-asencio.webp" alt="Raúl Asencio" class="player-photo">
+            <img src="images/player-asencio.webp"
+                 alt="Raúl Asencio" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#35</span>
               <h3 class="player-name">Raúl Asencio</h3>
@@ -112,8 +159,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-carreras.webp" alt="Álvaro Carreras" class="player-photo">
+            <img src="images/player-carreras.webp"
+                 alt="Álvaro Carreras" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#18</span>
               <h3 class="player-name">Álvaro Carreras</h3>
@@ -121,8 +171,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-cucurella.webp" alt="Marc Cucurella" class="player-photo">
+            <img src="images/player-cucurella.webp"
+                 alt="Marc Cucurella" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#25</span>
               <h3 class="player-name">Marc Cucurella</h3>
@@ -130,8 +183,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-diomande.webp" alt="Ousmane Diomande" class="player-photo">
+            <img src="images/player-diomande.webp"
+                 alt="Ousmane Diomande" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#26</span>
               <h3 class="player-name">Ousmane Diomande</h3>
@@ -139,8 +195,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-dumfries.webp" alt="Denzel Dumfries" class="player-photo">
+            <img src="images/player-dumfries.webp"
+                 alt="Denzel Dumfries" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#2</span>
               <h3 class="player-name">Denzel Dumfries</h3>
@@ -148,8 +207,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-huijsen.webp" alt="Dean Huijsen" class="player-photo">
+            <img src="images/player-huijsen.webp"
+                 alt="Dean Huijsen" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#24</span>
               <h3 class="player-name">Dean Huijsen</h3>
@@ -157,8 +219,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-konate.webp" alt="Ibrahima Konaté" class="player-photo">
+            <img src="images/player-konate.webp"
+                 alt="Ibrahima Konaté" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#12</span>
               <h3 class="player-name">Ibrahima Konaté</h3>
@@ -166,8 +231,11 @@
             </div>
           </article>
 
+
           <article class="player-card df">
-            <img src="images/player-trent.webp" alt="Trent Alexander-Arnold" class="player-photo">
+            <img src="images/player-trent.webp"
+                 alt="Trent Alexander-Arnold" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#66</span>
               <h3 class="player-name">Trent Alexander-Arnold</h3>
@@ -175,9 +243,13 @@
             </div>
           </article>
 
-          
+
+          <!-- MIDFIELDERS -->
+
           <article class="player-card mf">
-            <img src="images/player-Bellingham.webp" alt="Jude Bellingham" class="player-photo">
+            <img src="images/player-Bellingham.webp"
+                 alt="Jude Bellingham" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#5</span>
               <h3 class="player-name">Jude Bellingham</h3>
@@ -185,8 +257,11 @@
             </div>
           </article>
 
+
           <article class="player-card mf">
-            <img src="images/player-valverde.webp" alt="Federico Valverde" class="player-photo">
+            <img src="images/player-valverde.webp"
+                 alt="Federico Valverde" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#8</span>
               <h3 class="player-name">Federico Valverde</h3>
@@ -194,8 +269,11 @@
             </div>
           </article>
 
+
           <article class="player-card mf">
-            <img src="images/Camavinga.webp" alt="Eduardo Camavinga" class="player-photo">
+            <img src="images/Camavinga.webp"
+                 alt="Eduardo Camavinga" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#6</span>
               <h3 class="player-name">Eduardo Camavinga</h3>
@@ -203,8 +281,11 @@
             </div>
           </article>
 
+
           <article class="player-card mf">
-            <img src="images/player-tchouameni.webp" alt="Aurélien Tchouaméni" class="player-photo">
+            <img src="images/player-tchouameni.webp"
+                 alt="Aurélien Tchouaméni" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#14</span>
               <h3 class="player-name">Aurélien Tchouaméni</h3>
@@ -212,8 +293,11 @@
             </div>
           </article>
 
+
           <article class="player-card mf">
-            <img src="images/player-arda.webp" alt="Arda Güler" class="player-photo">
+            <img src="images/player-arda.webp"
+                 alt="Arda Güler" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#15</span>
               <h3 class="player-name">Arda Güler</h3>
@@ -221,8 +305,11 @@
             </div>
           </article>
 
+
           <article class="player-card mf">
-            <img src="images/player-brahim.webp" alt="Brahim Díaz" class="player-photo">
+            <img src="images/player-brahim.webp"
+                 alt="Brahim Díaz" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#21</span>
               <h3 class="player-name">Brahim Díaz</h3>
@@ -230,8 +317,11 @@
             </div>
           </article>
 
+
           <article class="player-card mf">
-            <img src="images/player-bernardo.webp" alt="Bernardo Silva" class="player-photo">
+            <img src="images/player-bernardo.webp"
+                 alt="Bernardo Silva" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#20</span>
               <h3 class="player-name">Bernardo Silva</h3>
@@ -239,8 +329,11 @@
             </div>
           </article>
 
+
           <article class="player-card mf">
-            <img src="images/player-thiago.webp" alt="Thiago Pitarch" class="player-photo">
+            <img src="images/player-thiago.webp"
+                 alt="Thiago Pitarch" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#28</span>
               <h3 class="player-name">Thiago Pitarch</h3>
@@ -248,9 +341,13 @@
             </div>
           </article>
 
-          
+
+          <!-- FORWARDS -->
+
           <article class="player-card fw">
-            <img src="images/player-vini.webp" alt="Vinícius Júnior" class="player-photo">
+            <img src="images/player-vini.webp"
+                 alt="Vinícius Júnior" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#7</span>
               <h3 class="player-name">Vinícius Jr.</h3>
@@ -258,8 +355,11 @@
             </div>
           </article>
 
+
           <article class="player-card fw">
-            <img src="images/player-mbappe.webp" alt="Kylian Mbappé" class="player-photo">
+            <img src="images/player-mbappe.webp"
+                 alt="Kylian Mbappé" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#9</span>
               <h3 class="player-name">Kylian Mbappé</h3>
@@ -267,8 +367,11 @@
             </div>
           </article>
 
+
           <article class="player-card fw">
-            <img src="images/player-rodrygo.webp" alt="Rodrygo Goes" class="player-photo">
+            <img src="images/player-rodrygo.webp"
+                 alt="Rodrygo Goes" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#11</span>
               <h3 class="player-name">Rodrygo</h3>
@@ -276,8 +379,11 @@
             </div>
           </article>
 
+
           <article class="player-card fw">
-            <img src="images/player-endrick.webp" alt="Endrick Felipe" class="player-photo">
+            <img src="images/player-endrick.webp"
+                 alt="Endrick Felipe" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#16</span>
               <h3 class="player-name">Endrick</h3>
@@ -285,8 +391,11 @@
             </div>
           </article>
 
+
           <article class="player-card fw">
-            <img src="images/player-espi.webp" alt="Fran Espi" class="player-photo">
+            <img src="images/player-espi.webp"
+                 alt="Fran Espi" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">#29</span>
               <h3 class="player-name">Fran Espi</h3>
@@ -294,9 +403,13 @@
             </div>
           </article>
 
-         
+
+          <!-- STAFF -->
+
           <article class="player-card st">
-            <img src="images/mourinho.webp" alt="José Mourinho" class="player-photo">
+            <img src="images/mourinho.webp"
+                 alt="José Mourinho" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">HEAD</span>
               <h3 class="player-name">José Mourinho</h3>
@@ -304,8 +417,11 @@
             </div>
           </article>
 
+
           <article class="player-card st">
-            <img src="images/player-valverde.webp" alt="Federico Valverde" class="player-photo">
+            <img src="images/player-valverde.webp"
+                 alt="Federico Valverde" class="player-photo">
+
             <div class="player-info">
               <span class="player-number">CAP</span>
               <h3 class="player-name">Federico Valverde</h3>
@@ -313,14 +429,26 @@
             </div>
           </article>
 
+
         </div>
       </section>
+
     </main>
 
-    
+
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="container footer-content">
-        <p>&copy; 2026 Real Madrid Fan Project. Built for Educational Purposes.</p>
-        <p>Advanced CSS Assignment #2</p>
+        <p>
+          &copy; 2026 Real Madrid Fan Project.
+          Built for Educational Purposes.
+        </p>
+
+        <p>Assignment #6 - Completed Website</p>
       </div>
     </footer>
+
+  </div>
+
+</body>
+</html>

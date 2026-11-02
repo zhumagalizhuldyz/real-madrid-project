@@ -1,156 +1,476 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real Madrid CF — Tickets & Fan Zone</title>
-    <link rel="stylesheet" href="css/style.css">  
+
+    <title>Real Madrid CF - Tickets</title>
+
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .page-hero {
+            text-align: center;
+            padding: 45px 20px;
+            background: #14213d;
+            color: white;
+        }
+
+        .page-hero h1 {
+            color: #e6c45a;
+            margin-bottom: 12px;
+        }
+
+        .matches-section,
+        .booking-section,
+        .info-section {
+            max-width: 1150px;
+            width: 92%;
+            margin: 40px auto;
+        }
+
+        .matches-section h2,
+        .booking-section h2,
+        .info-section h2 {
+            color: #14213d;
+            margin-bottom: 25px;
+        }
+
+        .matches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+        }
+
+        .match-card {
+            background: white;
+            border-radius: 12px;
+            padding: 22px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #d4af37;
+            text-align: center;
+        }
+
+        .match-league {
+            color: #9b791d;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .match-teams {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+        }
+
+        .team {
+            color: #14213d;
+            font-size: 18px;
+        }
+
+        .vs {
+            color: #d4af37;
+        }
+
+        .match-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 18px 0;
+            color: #555;
+        }
+
+        .btn-buy,
+        .btn-submit {
+            display: inline-block;
+            border: none;
+            border-radius: 6px;
+            background: #d4af37;
+            color: #14213d;
+            padding: 11px 22px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-buy:hover,
+        .btn-submit:hover {
+            background: #efcf63;
+        }
+
+        .booking-section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        .form-grid-inputs {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #14213d;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: 2px solid #d4af37;
+            border-color: #d4af37;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .btn-reset {
+            padding: 11px 22px;
+            border: 1px solid #14213d;
+            border-radius: 6px;
+            background: white;
+            color: #14213d;
+            cursor: pointer;
+        }
+
+        .booking-message {
+            display: none;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 6px;
+            background: #e8f5e9;
+            color: #205b2a;
+        }
+
+        .booking-demo-note {
+            background: #f4f6f9;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .faq-box,
+        .contacts-box {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 14px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            color: #14213d;
+            font-size: 17px;
+        }
+
+        .contact-info {
+            font-style: normal;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .stadium-hours {
+            margin-top: 20px;
+        }
+
+        .site-footer {
+            margin-top: 45px;
+        }
+
+        @media (max-width: 700px) {
+            .form-grid-inputs,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-section {
+                padding: 20px;
+            }
+
+            .page-hero {
+                padding: 30px 15px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .matches-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .match-card {
+                padding: 16px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
+<div class="page-wrapper">
+
+    <!-- HEADER -->
     <header class="site-header">
         <div class="header-container">
-            <div class="logo">
-                <span class="logo-text">REAL MADRID CF</span>
-            </div>
-            <nav class="main-nav">
+
+            <a href="index.html" class="logo-area">
+                <img src="images/crest.png" alt="Real Madrid Crest">
+                <span>Real Madrid FC</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="squad.html">Squad</a></li>
                     <li><a href="history.html">History</a></li>
-                    <li><a href="tickets.html" class="active">Tickets & Fan Zone</a></li>
+                    <li><a href="tickets.html" class="active" aria-current="page">Tickets</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="fanzone.html">Fan Zone</a></li>
                     <li><a href="register.html">Register</a></li>
                 </ul>
             </nav>
+
         </div>
     </header>
 
-    <main class="page-main">
+
+    <main>
+
+        <!-- HERO -->
         <section class="page-hero">
-            <h1>Matches, Tickets & Fan Zone</h1>
-            <p>Book your tickets for Real Madrid matches at the Santiago Bernabéu Stadium</p>
+            <h1>Matches & Tickets</h1>
+            <p>
+                Book your tickets for Real Madrid matches
+                at the Santiago Bernabéu Stadium.
+            </p>
         </section>
 
+
+        <!-- UPCOMING MATCHES -->
         <section class="matches-section">
+
             <h2>Upcoming Matches</h2>
+
+            <p>
+                The following fixtures are sample information
+                for this educational project. Please check official
+                club channels for confirmed match details.
+            </p>
+
             <div class="matches-grid">
+
                 <article class="match-card">
                     <div class="match-league">La Liga</div>
+
                     <div class="match-teams">
                         <span class="team home">Real Madrid</span>
                         <span class="vs">VS</span>
                         <span class="team away">FC Barcelona</span>
                     </div>
+
                     <div class="match-details">
                         <time datetime="2026-10-25">October 25, 2026, 21:00</time>
                         <span class="stadium">Santiago Bernabéu</span>
                     </div>
-                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+
+                    <a href="#booking-form" class="btn btn-buy"
+                       data-match="barcelona">Book Ticket</a>
                 </article>
+
 
                 <article class="match-card">
                     <div class="match-league">UEFA Champions League</div>
+
                     <div class="match-teams">
                         <span class="team home">Real Madrid</span>
                         <span class="vs">VS</span>
                         <span class="team away">Bayern Munich</span>
                     </div>
+
                     <div class="match-details">
                         <time datetime="2026-11-04">November 04, 2026, 22:00</time>
                         <span class="stadium">Santiago Bernabéu</span>
                     </div>
-                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+
+                    <a href="#booking-form" class="btn btn-buy"
+                       data-match="bayern">Book Ticket</a>
                 </article>
+
 
                 <article class="match-card">
                     <div class="match-league">La Liga</div>
+
                     <div class="match-teams">
                         <span class="team home">Real Madrid</span>
                         <span class="vs">VS</span>
                         <span class="team away">Atletico Madrid</span>
                     </div>
+
                     <div class="match-details">
                         <time datetime="2026-11-18">November 18, 2026, 18:30</time>
                         <span class="stadium">Santiago Bernabéu</span>
                     </div>
-                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+
+                    <a href="#booking-form" class="btn btn-buy"
+                       data-match="atletico">Book Ticket</a>
                 </article>
+
 
                 <article class="match-card">
                     <div class="match-league">Copa del Rey</div>
+
                     <div class="match-teams">
                         <span class="team home">Real Madrid</span>
                         <span class="vs">VS</span>
                         <span class="team away">Sevilla FC</span>
                     </div>
+
                     <div class="match-details">
                         <time datetime="2026-12-02">December 02, 2026, 20:00</time>
                         <span class="stadium">Santiago Bernabéu</span>
                     </div>
-                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+
+                    <a href="#booking-form" class="btn btn-buy"
+                       data-match="sevilla">Book Ticket</a>
                 </article>
+
 
                 <article class="match-card">
                     <div class="match-league">La Liga</div>
+
                     <div class="match-teams">
                         <span class="team home">Real Madrid</span>
                         <span class="vs">VS</span>
                         <span class="team away">Valencia CF</span>
                     </div>
+
                     <div class="match-details">
                         <time datetime="2026-12-15">December 15, 2026, 19:00</time>
                         <span class="stadium">Santiago Bernabéu</span>
                     </div>
-                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+
+                    <a href="#booking-form" class="btn btn-buy"
+                       data-match="valencia">Book Ticket</a>
                 </article>
+
 
                 <article class="match-card">
                     <div class="match-league">UEFA Champions League</div>
+
                     <div class="match-teams">
                         <span class="team home">Real Madrid</span>
                         <span class="vs">VS</span>
                         <span class="team away">Juventus</span>
                     </div>
+
                     <div class="match-details">
                         <time datetime="2027-01-20">January 20, 2027, 22:00</time>
                         <span class="stadium">Santiago Bernabéu</span>
                     </div>
-                    <a href="#booking-form" class="btn btn-buy">Book Ticket</a>
+
+                    <a href="#booking-form" class="btn btn-buy"
+                       data-match="juventus">Book Ticket</a>
                 </article>
+
             </div>
+
         </section>
 
+
+        <!-- BOOKING FORM -->
         <section class="booking-section" id="booking-form">
+
             <h2>Ticket Booking Form</h2>
-            <form class="ticket-form" action="#" method="post">
+
+            <form class="ticket-form" id="ticketForm" novalidate>
+
                 <div class="form-grid-inputs">
+
                     <div class="form-group">
                         <label for="user-name">Full Name:</label>
-                        <input type="text" id="user-name" name="fullname" placeholder="John Doe" required>
+
+                        <input
+                            type="text"
+                            id="user-name"
+                            name="fullname"
+                            placeholder="John Doe"
+                            required
+                            minlength="2"
+                        >
                     </div>
+
 
                     <div class="form-group">
                         <label for="user-email">Email Address:</label>
-                        <input type="email" id="user-email" name="email" placeholder="example@gmail.com" required>
+
+                        <input
+                            type="email"
+                            id="user-email"
+                            name="email"
+                            placeholder="example@gmail.com"
+                            required
+                        >
                     </div>
+
 
                     <div class="form-group">
                         <label for="match-select">Select Match:</label>
+
                         <select id="match-select" name="match" required>
                             <option value="">-- Choose a Match --</option>
                             <option value="barcelona">Real Madrid vs FC Barcelona</option>
                             <option value="bayern">Real Madrid vs Bayern Munich</option>
                             <option value="atletico">Real Madrid vs Atletico Madrid</option>
                             <option value="sevilla">Real Madrid vs Sevilla FC</option>
+                            <option value="valencia">Real Madrid vs Valencia CF</option>
+                            <option value="juventus">Real Madrid vs Juventus</option>
                         </select>
                     </div>
 
+
                     <div class="form-group">
                         <label for="sector-select">Stadium Sector:</label>
+
                         <select id="sector-select" name="sector" required>
+                            <option value="">-- Choose a Sector --</option>
                             <option value="tribuna-vip">VIP Box</option>
                             <option value="tribuna-north">North Stand</option>
                             <option value="tribuna-south">South Stand (Fan Zone)</option>
@@ -158,64 +478,236 @@
                         </select>
                     </div>
 
+
                     <div class="form-group">
                         <label for="ticket-quantity">Number of Tickets:</label>
-                        <input type="number" id="ticket-quantity" name="quantity" min="1" max="6" value="1" required>
+
+                        <input
+                            type="number"
+                            id="ticket-quantity"
+                            name="quantity"
+                            min="1"
+                            max="6"
+                            value="1"
+                            required
+                        >
                     </div>
+
                 </div>
+
 
                 <div class="form-actions">
-                    <button type="submit" class="btn btn-submit">Confirm Booking</button>
-                    <button type="reset" class="btn btn-reset">Reset</button>
+
+                    <button type="submit" class="btn btn-submit">
+                        Confirm Booking
+                    </button>
+
+                    <button type="reset" class="btn btn-reset">
+                        Reset
+                    </button>
+
                 </div>
+
             </form>
+
+
+            <p class="booking-demo-note">
+                <strong>Demo notice:</strong>
+                This is an educational booking form.
+                No real tickets are sold, no payment is processed,
+                and no personal information is sent or stored.
+            </p>
+
+
+            <div
+                id="booking-message"
+                class="booking-message"
+                role="status"
+                aria-live="polite"
+            ></div>
+
         </section>
 
+
+        <!-- FAQ AND STADIUM INFORMATION -->
         <section class="info-section">
+
             <div class="info-grid">
+
                 <div class="faq-box">
-                    <h2>Frequently Asked Questions (FAQ)</h2>
+
+                    <h2>Frequently Asked Questions</h2>
+
                     <div class="faq-item">
                         <h3>How will I receive my tickets?</h3>
-                        <p>An electronic ticket with a QR code will be sent to your email immediately after booking confirmation.</p>
+
+                        <p>
+                            In a real booking system, electronic tickets
+                            may be delivered by email. This demonstration
+                            does not issue tickets.
+                        </p>
                     </div>
+
+
                     <div class="faq-item">
                         <h3>How early should I arrive before the match?</h3>
-                        <p>Gates at the Santiago Bernabéu Stadium open 2 hours prior to kickoff.</p>
+
+                        <p>
+                            Check the official match information and
+                            stadium guidance before attending.
+                        </p>
                     </div>
+
+
                     <div class="faq-item">
                         <h3>Do I need an ID card for entry?</h3>
-                        <p>Yes, a valid personal identification document matching the name on the ticket must be presented at the gate.</p>
+
+                        <p>
+                            Please check the official stadium entry
+                            requirements for the specific match.
+                        </p>
                     </div>
+
                 </div>
+
 
                 <div class="contacts-box">
-                    <h2>Contacts & Stadium Info</h2>
+
+                    <h2>Stadium Information</h2>
+
                     <address class="contact-info">
-                        <p><strong>Stadium:</strong> Estadio Santiago Bernabéu</p>
-                        <p><strong>Address:</strong> C. de Concha Espina, 1, 28036 Madrid, Spain</p>
-                        <p><strong>Ticket Office Phone:</strong> +34 91 398 4300</p>
-                        <p><strong>Support Email:</strong> tickets@realmadrid.com</p>
+
+                        <p>
+                            <strong>Stadium:</strong>
+                            Estadio Santiago Bernabéu
+                        </p>
+
+                        <p>
+                            <strong>Address:</strong>
+                            C. de Concha Espina, 1,
+                            28036 Madrid, Spain
+                        </p>
+
+                        <p>
+                            <strong>Official Website:</strong>
+                            <a href="https://www.realmadrid.com/"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Real Madrid
+                            </a>
+                        </p>
+
                     </address>
+
                     <div class="stadium-hours">
-                        <h3>Ticket Office Hours:</h3>
-                        <p>Mon — Sat: 10:00 – 19:00</p>
-                        <p>Sun (Matchdays): 10:00 – until kickoff</p>
+                        <h3>Ticket Information</h3>
+
+                        <p>
+                            For current ticket availability,
+                            prices and opening hours, consult
+                            the official Real Madrid website.
+                        </p>
                     </div>
+
                 </div>
+
             </div>
+
         </section>
+
     </main>
 
+
+    <!-- FOOTER -->
     <footer class="site-footer">
         <div class="footer-container">
-            <p>&copy; 2026 Real Madrid CF Fan Project. Assignment #2.</p>
+
+            <p>
+                &copy; 2026 Real Madrid CF Fan Project.
+                Built for Educational Purposes.
+            </p>
+
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="tickets.html">Tickets</a></li>
             </ul>
+
         </div>
     </footer>
+
+</div>
+
+
+<!-- JQUERY AND FORM SCRIPT -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    // Select a match when the user clicks Book Ticket
+    $(".btn-buy").on("click", function () {
+        const selectedMatch = $(this).data("match");
+
+        $("#match-select").val(selectedMatch);
+    });
+
+
+    // Ticket booking form validation
+    $("#ticketForm").on("submit", function (event) {
+
+        event.preventDefault();
+
+        const name = $("#user-name").val().trim();
+        const email = $("#user-email").val().trim();
+        const match = $("#match-select").val();
+        const sector = $("#sector-select").val();
+        const quantity = Number($("#ticket-quantity").val());
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (name.length < 2) {
+            alert("Please enter your full name.");
+            $("#user-name").trigger("focus");
+            return;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            $("#user-email").trigger("focus");
+            return;
+        }
+
+        if (!match || !sector) {
+            alert("Please select a match and stadium sector.");
+            return;
+        }
+
+        if (!Number.isInteger(quantity) || quantity < 1 || quantity > 6) {
+            alert("Please select between 1 and 6 tickets.");
+            $("#ticket-quantity").trigger("focus");
+            return;
+        }
+
+        $("#booking-message")
+            .text(
+                "Demo booking successful for " + name +
+                ". Match: " + $("#match-select option:selected").text() +
+                ". Tickets: " + quantity +
+                ". No real booking or payment was made."
+            )
+            .stop(true, true)
+            .fadeIn(300);
+
+    });
+
+
+    // Hide success message when the form is reset
+    $("#ticketForm").on("reset", function () {
+        $("#booking-message").stop(true, true).fadeOut(200);
+    });
+
+});
+</script>
 
 </body>
 </html>
